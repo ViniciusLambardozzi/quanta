@@ -1,0 +1,1321 @@
+Analysis & Synthesis report for quanta
+Tue Sep 05 21:14:50 2017
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |quanta|processor:inst|controller:controller|s_state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Added for RAM Pass-Through Logic
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for processor:inst|ram:ram|altsyncram:s_memory_rtl_0|altsyncram_pmk1:auto_generated
+ 16. Parameter Settings for User Entity Instance: processor:inst|mux:main_mux
+ 17. Parameter Settings for User Entity Instance: processor:inst|parallel_register:program_counter
+ 18. Parameter Settings for User Entity Instance: processor:inst|mux:pc_incrementer_mux
+ 19. Parameter Settings for User Entity Instance: processor:inst|parallel_register:memory_address_register
+ 20. Parameter Settings for User Entity Instance: processor:inst|parallel_register:memory_destination_register
+ 21. Parameter Settings for User Entity Instance: processor:inst|parallel_register:instruction_register
+ 22. Parameter Settings for User Entity Instance: processor:inst|ram:ram
+ 23. Parameter Settings for User Entity Instance: processor:inst|parallel_register:register_a
+ 24. Parameter Settings for User Entity Instance: processor:inst|parallel_register:register_b
+ 25. Parameter Settings for User Entity Instance: processor:inst|mux:status_mux
+ 26. Parameter Settings for User Entity Instance: processor:inst|parallel_register:status_register
+ 27. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r00
+ 28. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r01
+ 29. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r02
+ 30. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r03
+ 31. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r04
+ 32. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r05
+ 33. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r06
+ 34. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r07
+ 35. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r08
+ 36. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r09
+ 37. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r10
+ 38. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r11
+ 39. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r12
+ 40. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r13
+ 41. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r14
+ 42. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r15
+ 43. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r16
+ 44. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r17
+ 45. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r18
+ 46. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r19
+ 47. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r20
+ 48. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r21
+ 49. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r22
+ 50. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r23
+ 51. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r24
+ 52. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r25
+ 53. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r26
+ 54. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r27
+ 55. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r28
+ 56. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r29
+ 57. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r30
+ 58. Parameter Settings for User Entity Instance: processor:inst|parallel_register:r31
+ 59. Parameter Settings for User Entity Instance: processor:inst|mux:m1
+ 60. Parameter Settings for User Entity Instance: processor:inst|mux:m2
+ 61. Parameter Settings for Inferred Entity Instance: processor:inst|ram:ram|altsyncram:s_memory_rtl_0
+ 62. altsyncram Parameter Settings by Entity Instance
+ 63. Port Connectivity Checks: "processor:inst|mux:status_mux"
+ 64. Port Connectivity Checks: "processor:inst|adder:pc_incrementer"
+ 65. Port Connectivity Checks: "processor:inst|controller:controller"
+ 66. Post-Synthesis Netlist Statistics for Top Partition
+ 67. Elapsed Time Per Partition
+ 68. Analysis & Synthesis Messages
+ 69. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Sep 05 21:14:50 2017      ;
+; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name                      ; quanta                                     ;
+; Top-level Entity Name              ; quanta                                     ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 3,559                                      ;
+;     Total combinational functions  ; 2,373                                      ;
+;     Dedicated logic registers      ; 1,459                                      ;
+; Total registers                    ; 1459                                       ;
+; Total pins                         ; 143                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 32,768                                     ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; quanta             ; quanta             ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++---------------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path            ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                   ; Library ;
++---------------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+; src/vhdl/Processor.vhd                      ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/Processor.vhd                      ;         ;
+; src/vhdl/component/Alu.vhd                  ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/component/Alu.vhd                  ;         ;
+; src/vhdl/component/Controller.vhd           ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/component/Controller.vhd           ;         ;
+; src/vhdl/component/Multiplexer.vhd          ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/component/Multiplexer.vhd          ;         ;
+; src/vhdl/component/Shifter.vhd              ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/component/Shifter.vhd              ;         ;
+; src/vhdl/lib/ControllerConstants.vhd        ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/lib/ControllerConstants.vhd        ;         ;
+; src/vhdl/lib/Types.vhd                      ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/lib/Types.vhd                      ;         ;
+; src/vhdl/memory/Ram.vhd                     ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/memory/Ram.vhd                     ;         ;
+; src/vhdl/memory/Register.vhd                ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/memory/Register.vhd                ;         ;
+; src/vhdl/util/Adder.vhd                     ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/util/Adder.vhd                     ;         ;
+; src/vhdl/util/HexDisplay.vhd                ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/util/HexDisplay.vhd                ;         ;
+; quanta.bdf                                  ; yes             ; User Block Diagram/Schematic File      ; C:/Vinicius/quanta/Hardware/quanta/quanta.bdf                                  ;         ;
+; src/vhdl/controllers/io/BusController.vhd   ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/controllers/io/BusController.vhd   ;         ;
+; src/vhdl/controllers/io/IoBusController.vhd ; yes             ; User VHDL File                         ; C:/Vinicius/quanta/Hardware/quanta/src/vhdl/controllers/io/IoBusController.vhd ;         ;
+; altsyncram.tdf                              ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/altsyncram.tdf                  ;         ;
+; stratix_ram_block.inc                       ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/stratix_ram_block.inc           ;         ;
+; lpm_mux.inc                                 ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/lpm_mux.inc                     ;         ;
+; lpm_decode.inc                              ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/lpm_decode.inc                  ;         ;
+; aglobal140.inc                              ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/aglobal140.inc                  ;         ;
+; a_rdenreg.inc                               ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/a_rdenreg.inc                   ;         ;
+; altrom.inc                                  ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/altrom.inc                      ;         ;
+; altram.inc                                  ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/altram.inc                      ;         ;
+; altdpram.inc                                ; yes             ; Megafunction                           ; c:/altera/14.0/quartus/libraries/megafunctions/altdpram.inc                    ;         ;
+; db/altsyncram_pmk1.tdf                      ; yes             ; Auto-Generated Megafunction            ; C:/Vinicius/quanta/Hardware/quanta/db/altsyncram_pmk1.tdf                      ;         ;
+; quanta.mif                                  ; yes             ; Auto-Found Memory Initialization File  ; C:/Vinicius/quanta/Hardware/quanta/quanta.mif                                  ;         ;
++---------------------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 3,559           ;
+;                                             ;                 ;
+; Total combinational functions               ; 2373            ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 1965            ;
+;     -- 3 input functions                    ; 343             ;
+;     -- <=2 input functions                  ; 65              ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 2373            ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 1459            ;
+;     -- Dedicated logic registers            ; 1459            ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 143             ;
+; Total memory bits                           ; 32768           ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+; Maximum fan-out node                        ; sys_clock~input ;
+; Maximum fan-out                             ; 1491            ;
+; Total fan-out                               ; 14294           ;
+; Average fan-out                             ; 3.44            ;
++---------------------------------------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                        ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Library Name ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
+; |quanta                                               ; 2373 (0)          ; 1459 (0)     ; 32768       ; 0            ; 0       ; 0         ; 143  ; 0            ; |quanta                                                                                 ; work         ;
+;    |hex_display:inst1|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst1                                                               ; work         ;
+;    |hex_display:inst2|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst2                                                               ; work         ;
+;    |hex_display:inst3|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst3                                                               ; work         ;
+;    |hex_display:inst4|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst4                                                               ; work         ;
+;    |hex_display:inst5|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst5                                                               ; work         ;
+;    |hex_display:inst6|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst6                                                               ; work         ;
+;    |hex_display:inst7|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst7                                                               ; work         ;
+;    |hex_display:inst8|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst8                                                               ; work         ;
+;    |processor:inst|                                   ; 2317 (0)          ; 1459 (0)     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst                                                                  ; work         ;
+;       |adder:pc_incrementer|                          ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|adder:pc_incrementer                                             ; work         ;
+;       |alu:alu|                                       ; 321 (191)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu                                                          ; work         ;
+;          |adder:a|                                    ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu|adder:a                                                  ; work         ;
+;          |adder:s|                                    ; 71 (71)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu|adder:s                                                  ; work         ;
+;       |bus_controller:io_memory_bus|                  ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|bus_controller:io_memory_bus                                     ; work         ;
+;       |controller:controller|                         ; 253 (253)         ; 69 (69)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|controller:controller                                            ; work         ;
+;       |io_controller:io_data_controller|              ; 59 (59)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|io_controller:io_data_controller                                 ; work         ;
+;       |mux:m1|                                        ; 672 (672)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:m1                                                           ; work         ;
+;       |mux:m2|                                        ; 672 (672)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:m2                                                           ; work         ;
+;       |mux:main_mux|                                  ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:main_mux                                                     ; work         ;
+;       |mux:pc_incrementer_mux|                        ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:pc_incrementer_mux                                           ; work         ;
+;       |mux:status_mux|                                ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:status_mux                                                   ; work         ;
+;       |parallel_register:instruction_register|        ; 0 (0)             ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:instruction_register                           ; work         ;
+;       |parallel_register:memory_address_register|     ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:memory_address_register                        ; work         ;
+;       |parallel_register:memory_destination_register| ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:memory_destination_register                    ; work         ;
+;       |parallel_register:program_counter|             ; 20 (20)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:program_counter                                ; work         ;
+;       |parallel_register:r00|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r00                                            ; work         ;
+;       |parallel_register:r01|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r01                                            ; work         ;
+;       |parallel_register:r02|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r02                                            ; work         ;
+;       |parallel_register:r03|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r03                                            ; work         ;
+;       |parallel_register:r04|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r04                                            ; work         ;
+;       |parallel_register:r05|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r05                                            ; work         ;
+;       |parallel_register:r06|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r06                                            ; work         ;
+;       |parallel_register:r07|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r07                                            ; work         ;
+;       |parallel_register:r08|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r08                                            ; work         ;
+;       |parallel_register:r09|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r09                                            ; work         ;
+;       |parallel_register:r10|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r10                                            ; work         ;
+;       |parallel_register:r11|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r11                                            ; work         ;
+;       |parallel_register:r12|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r12                                            ; work         ;
+;       |parallel_register:r13|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r13                                            ; work         ;
+;       |parallel_register:r14|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r14                                            ; work         ;
+;       |parallel_register:r15|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r15                                            ; work         ;
+;       |parallel_register:r16|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r16                                            ; work         ;
+;       |parallel_register:r17|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r17                                            ; work         ;
+;       |parallel_register:r18|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r18                                            ; work         ;
+;       |parallel_register:r19|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r19                                            ; work         ;
+;       |parallel_register:r20|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r20                                            ; work         ;
+;       |parallel_register:r21|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r21                                            ; work         ;
+;       |parallel_register:r22|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r22                                            ; work         ;
+;       |parallel_register:r23|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r23                                            ; work         ;
+;       |parallel_register:r24|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r24                                            ; work         ;
+;       |parallel_register:r25|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r25                                            ; work         ;
+;       |parallel_register:r26|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r26                                            ; work         ;
+;       |parallel_register:r27|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r27                                            ; work         ;
+;       |parallel_register:r28|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r28                                            ; work         ;
+;       |parallel_register:r29|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r29                                            ; work         ;
+;       |parallel_register:r30|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r30                                            ; work         ;
+;       |parallel_register:r31|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:r31                                            ; work         ;
+;       |parallel_register:register_a|                  ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:register_a                                     ; work         ;
+;       |parallel_register:register_b|                  ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:register_b                                     ; work         ;
+;       |parallel_register:status_register|             ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:status_register                                ; work         ;
+;       |ram:ram|                                       ; 42 (42)           ; 117 (117)    ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|ram:ram                                                          ; work         ;
+;          |altsyncram:s_memory_rtl_0|                  ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|ram:ram|altsyncram:s_memory_rtl_0                                ; work         ;
+;             |altsyncram_pmk1:auto_generated|          ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|ram:ram|altsyncram:s_memory_rtl_0|altsyncram_pmk1:auto_generated ; work         ;
+;       |shifter:shifter|                               ; 69 (69)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|shifter:shifter                                                  ; work         ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                      ;
++--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------+
+; Name                                                                                       ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF        ;
++--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------+
+; processor:inst|ram:ram|altsyncram:s_memory_rtl_0|altsyncram_pmk1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768 ; quanta.mif ;
++--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |quanta|processor:inst|controller:controller|s_state                                                                                                        ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-----------------+-----------------+-----------------+
+; Name              ; s_state.execute_4 ; s_state.execute_3 ; s_state.execute_2 ; s_state.execute_1 ; s_state.execute_0 ; s_state.fetch_2 ; s_state.fetch_1 ; s_state.fetch_0 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-----------------+-----------------+-----------------+
+; s_state.fetch_0   ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0               ; 0               ; 0               ;
+; s_state.fetch_1   ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0               ; 1               ; 1               ;
+; s_state.fetch_2   ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1               ; 0               ; 1               ;
+; s_state.execute_0 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0               ; 0               ; 1               ;
+; s_state.execute_1 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0               ; 0               ; 1               ;
+; s_state.execute_2 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0               ; 0               ; 1               ;
+; s_state.execute_3 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0               ; 0               ; 1               ;
+; s_state.execute_4 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0               ; 0               ; 1               ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-----------------+-----------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                     ;
++--------------------------------------------------------+---------------------------------------------------------------+
+; Register name                                          ; Reason for Removal                                            ;
++--------------------------------------------------------+---------------------------------------------------------------+
+; processor:inst|controller:controller|out_mask[1..15]   ; Merged with processor:inst|controller:controller|out_mask[0]  ;
+; processor:inst|controller:controller|out_mask[17..31]  ; Merged with processor:inst|controller:controller|out_mask[16] ;
+; processor:inst|controller:controller|out_mask[0]       ; Stuck at VCC due to stuck port data_in                        ;
+; processor:inst|controller:controller|out_mask[16]      ; Stuck at GND due to stuck port data_in                        ;
+; processor:inst|controller:controller|s_state.execute_0 ; Merged with processor:inst|controller:controller|out_en[35]   ;
+; Total Number of Removed Registers = 33                 ;                                                               ;
++--------------------------------------------------------+---------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1459  ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 21    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1327  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Inverted Register Statistics                               ;
++--------------------------------------------------+---------+
+; Inverted Register                                ; Fan out ;
++--------------------------------------------------+---------+
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[22] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[24] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[26] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[28] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[30] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[32] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[34] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[36] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[38] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[40] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[42] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[44] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[46] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[48] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[50] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[52] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[54] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[56] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[58] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[60] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[62] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[64] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[66] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[68] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[70] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[69] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[72] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[74] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[76] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[78] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[80] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[82] ; 1       ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[84] ; 1       ;
+; Total number of inverted registers = 33          ;         ;
++--------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                               ;
++--------------------------------------------------+---------------------------------------+
+; Register Name                                    ; RAM Name                              ;
++--------------------------------------------------+---------------------------------------+
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[0]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[1]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[2]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[3]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[4]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[5]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[6]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[7]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[8]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[9]  ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[10] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[11] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[12] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[13] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[14] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[15] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[16] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[17] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[18] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[19] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[20] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[21] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[22] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[23] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[24] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[25] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[26] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[27] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[28] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[29] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[30] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[31] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[32] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[33] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[34] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[35] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[36] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[37] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[38] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[39] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[40] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[41] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[42] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[43] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[44] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[45] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[46] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[47] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[48] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[49] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[50] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[51] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[52] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[53] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[54] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[55] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[56] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[57] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[58] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[59] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[60] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[61] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[62] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[63] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[64] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[65] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[66] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[67] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[68] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[69] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[70] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[71] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[72] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[73] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[74] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[75] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[76] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[77] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[78] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[79] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[80] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[81] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[82] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[83] ; processor:inst|ram:ram|s_memory_rtl_0 ;
+; processor:inst|ram:ram|s_memory_rtl_0_bypass[84] ; processor:inst|ram:ram|s_memory_rtl_0 ;
++--------------------------------------------------+---------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |quanta|processor:inst|io_controller:io_data_controller|out_data[13] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |quanta|processor:inst|io_controller:io_data_controller|out_data[2]  ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |quanta|processor:inst|parallel_register:register_a|s_memory[31]     ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |quanta|processor:inst|parallel_register:register_b|s_memory[30]     ;
+; 118:1              ; 4 bits    ; 312 LEs       ; 0 LEs                ; 312 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_sel[8]              ;
+; 256:1              ; 2 bits    ; 340 LEs       ; 0 LEs                ; 340 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_mask[16]            ;
+; 256:1              ; 3 bits    ; 510 LEs       ; 12 LEs               ; 498 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_fun[7]              ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; Yes        ; |quanta|processor:inst|parallel_register:status_register|s_memory[2] ;
+; 263:1              ; 32 bits   ; 5600 LEs      ; 32 LEs               ; 5568 LEs               ; Yes        ; |quanta|processor:inst|controller:controller|out_en[20]              ;
+; 29:1               ; 5 bits    ; 95 LEs        ; 10 LEs               ; 85 LEs                 ; Yes        ; |quanta|processor:inst|controller:controller|out_sel[0]              ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 128 LEs              ; 32 LEs                 ; No         ; |quanta|processor:inst|mux:main_mux|Mux6                             ;
+; 16:1               ; 31 bits   ; 310 LEs       ; 186 LEs              ; 124 LEs                ; No         ; |quanta|processor:inst|alu:alu|Mux24                                 ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |quanta|processor:inst|shifter:shifter|Mux4                          ;
+; 256:1              ; 6 bits    ; 1020 LEs      ; 6 LEs                ; 1014 LEs               ; No         ; |quanta|processor:inst|controller:controller|Mux140                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Source assignments for processor:inst|ram:ram|altsyncram:s_memory_rtl_0|altsyncram_pmk1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                       ;
++---------------------------------+--------------------+------+------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
++---------------------------------+--------------------+------+------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|mux:main_mux ;
++-------------------+-------+----------------------------------------------+
+; Parameter Name    ; Value ; Type                                         ;
++-------------------+-------+----------------------------------------------+
+; g_selection_width ; 3     ; Signed Integer                               ;
++-------------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:program_counter ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|mux:pc_incrementer_mux ;
++-------------------+-------+--------------------------------------------------------+
+; Parameter Name    ; Value ; Type                                                   ;
++-------------------+-------+--------------------------------------------------------+
+; g_selection_width ; 1     ; Signed Integer                                         ;
++-------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:memory_address_register ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:memory_destination_register ;
++----------------+-------+----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                             ;
++----------------+-------+----------------------------------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:instruction_register ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|ram:ram ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; g_addr_width   ; 10    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:register_a ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:register_b ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|mux:status_mux ;
++-------------------+-------+------------------------------------------------+
+; Parameter Name    ; Value ; Type                                           ;
++-------------------+-------+------------------------------------------------+
+; g_selection_width ; 1     ; Signed Integer                                 ;
++-------------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:status_register ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r00 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r01 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r02 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r03 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r04 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r05 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r06 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r07 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r08 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r09 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r10 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r11 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r12 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r13 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r14 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r15 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r16 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r17 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r18 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r19 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r20 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r21 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r22 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r23 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r24 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r25 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r26 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r27 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r28 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r29 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r30 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|parallel_register:r31 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; g_data_width   ; 32    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|mux:m1 ;
++-------------------+-------+----------------------------------------+
+; Parameter Name    ; Value ; Type                                   ;
++-------------------+-------+----------------------------------------+
+; g_selection_width ; 5     ; Signed Integer                         ;
++-------------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processor:inst|mux:m2 ;
++-------------------+-------+----------------------------------------+
+; Parameter Name    ; Value ; Type                                   ;
++-------------------+-------+----------------------------------------+
+; g_selection_width ; 5     ; Signed Integer                         ;
++-------------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: processor:inst|ram:ram|altsyncram:s_memory_rtl_0 ;
++------------------------------------+----------------------+---------------------------------------+
+; Parameter Name                     ; Value                ; Type                                  ;
++------------------------------------+----------------------+---------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                               ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                               ;
+; WIDTH_A                            ; 32                   ; Untyped                               ;
+; WIDTHAD_A                          ; 10                   ; Untyped                               ;
+; NUMWORDS_A                         ; 1024                 ; Untyped                               ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                               ;
+; WIDTH_B                            ; 32                   ; Untyped                               ;
+; WIDTHAD_B                          ; 10                   ; Untyped                               ;
+; NUMWORDS_B                         ; 1024                 ; Untyped                               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                               ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                               ;
+; BYTE_SIZE                          ; 8                    ; Untyped                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
+; INIT_FILE                          ; quanta.mif           ; Untyped                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                               ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                               ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                               ;
+; CBXI_PARAMETER                     ; altsyncram_pmk1      ; Untyped                               ;
++------------------------------------+----------------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                             ;
++-------------------------------------------+--------------------------------------------------+
+; Name                                      ; Value                                            ;
++-------------------------------------------+--------------------------------------------------+
+; Number of entity instances                ; 1                                                ;
+; Entity Instance                           ; processor:inst|ram:ram|altsyncram:s_memory_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                        ;
+;     -- WIDTH_A                            ; 32                                               ;
+;     -- NUMWORDS_A                         ; 1024                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                     ;
+;     -- WIDTH_B                            ; 32                                               ;
+;     -- NUMWORDS_B                         ; 1024                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                           ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                     ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                             ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                         ;
++-------------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "processor:inst|mux:status_mux" ;
++----------------+-------+----------+-----------------------+
+; Port           ; Type  ; Severity ; Details               ;
++----------------+-------+----------+-----------------------+
+; in_i[1][31..4] ; Input ; Info     ; Stuck at GND          ;
+; in_i[0][31..4] ; Input ; Info     ; Stuck at GND          ;
++----------------+-------+----------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:inst|adder:pc_incrementer"                                                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; in_b     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in_cin   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; out_cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processor:inst|controller:controller"                                                      ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; out_en[40]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out_fun[9]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out_sel[15] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out_sel[12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 143                         ;
+; cycloneiii_ff         ; 1459                        ;
+;     ENA               ; 1306                        ;
+;     ENA SLD           ; 21                          ;
+;     SCLR              ; 2                           ;
+;     plain             ; 130                         ;
+; cycloneiii_lcell_comb ; 2381                        ;
+;     normal            ; 2381                        ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 62                          ;
+;         3 data inputs ; 343                         ;
+;         4 data inputs ; 1965                        ;
+; cycloneiii_ram_block  ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 35.00                       ;
+; Average LUT depth     ; 6.22                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:15     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Tue Sep 05 21:14:31 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off quanta -c quanta
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/processor.vhd
+    Info (12022): Found design unit 1: processor-behavioral
+    Info (12023): Found entity 1: processor
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/component/alu.vhd
+    Info (12022): Found design unit 1: alu-behavioral
+    Info (12023): Found entity 1: alu
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/component/controller.vhd
+    Info (12022): Found design unit 1: controller-behavioral
+    Info (12023): Found entity 1: controller
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/component/multiplexer.vhd
+    Info (12022): Found design unit 1: mux-behavioral
+    Info (12023): Found entity 1: mux
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/component/shifter.vhd
+    Info (12022): Found design unit 1: shifter-behavioral
+    Info (12023): Found entity 1: shifter
+Info (12021): Found 1 design units, including 0 entities, in source file src/vhdl/lib/controllerconstants.vhd
+    Info (12022): Found design unit 1: controller_constants
+Info (12021): Found 2 design units, including 0 entities, in source file src/vhdl/lib/types.vhd
+    Info (12022): Found design unit 1: ram_types
+    Info (12022): Found design unit 2: mux_types
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/memory/ram.vhd
+    Info (12022): Found design unit 1: ram-behavioral
+    Info (12023): Found entity 1: ram
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/memory/register.vhd
+    Info (12022): Found design unit 1: parallel_register-behavioral
+    Info (12023): Found entity 1: parallel_register
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/util/adder.vhd
+    Info (12022): Found design unit 1: adder-behavioral
+    Info (12023): Found entity 1: adder
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/util/hexdisplay.vhd
+    Info (12022): Found design unit 1: hex_display-behavioral
+    Info (12023): Found entity 1: hex_display
+Info (12021): Found 2 design units, including 0 entities, in source file src/vhdl/util/range.vhd
+    Info (12022): Found design unit 1: range_util
+    Info (12022): Found design unit 2: range_util-body
+Info (12021): Found 1 design units, including 1 entities, in source file quanta.bdf
+    Info (12023): Found entity 1: quanta
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/controllers/io/matrixkeyboard.vhd
+    Info (12022): Found design unit 1: matrix_keyboard_decoder-behavioral
+    Info (12023): Found entity 1: matrix_keyboard_decoder
+Info (12021): Found 1 design units, including 1 entities, in source file tmp/backup.bdf
+    Info (12023): Found entity 1: backup
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/controllers/io/lcdcontroller.vhd
+    Info (12022): Found design unit 1: lcd_controller-controller
+    Info (12023): Found entity 1: lcd_controller
+Info (12021): Found 1 design units, including 0 entities, in source file src/vhdl/lib/lcdconstants.vhd
+    Info (12022): Found design unit 1: lcd_constants
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/controllers/io/buscontroller.vhd
+    Info (12022): Found design unit 1: bus_controller-behavioral
+    Info (12023): Found entity 1: bus_controller
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/controllers/io/iobuscontroller.vhd
+    Info (12022): Found design unit 1: io_controller-behavioral
+    Info (12023): Found entity 1: io_controller
+Info (12021): Found 1 design units, including 1 entities, in source file tmp/display.bdf
+    Info (12023): Found entity 1: display
+Info (15248): File "C:/Vinicius/quanta/Hardware/quanta/src/vhdl/component/LcdController.vhd" is a duplicate of already analyzed file "C:/Vinicius/quanta/Hardware/quanta/src/vhdl/controllers/io/LCDController.vhd" (same filename, same library name and same md5 digest). Skipping analysis of this file.
+Info (12021): Found 0 design units, including 0 entities, in source file src/vhdl/component/lcdcontroller.vhd
+Info (12021): Found 1 design units, including 1 entities, in source file tmp/old.bdf
+    Info (12023): Found entity 1: old
+Info (12127): Elaborating entity "quanta" for the top level hierarchy
+Warning (275011): Block or symbol "hex_display" of instance "inst3" overlaps another block or symbol
+Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:inst1"
+Info (12128): Elaborating entity "processor" for hierarchy "processor:inst"
+Critical Warning (10920): VHDL Incomplete Partial Association warning at Processor.vhd(163): port or argument "in_i" has 96/256 unassociated elements
+Info (12129): Elaborating entity "mux" using architecture "A:behavioral" for hierarchy "processor:inst|mux:main_mux"
+Info (12129): Elaborating entity "controller" using architecture "A:behavioral" for hierarchy "processor:inst|controller:controller"
+Info (12129): Elaborating entity "parallel_register" using architecture "A:behavioral" for hierarchy "processor:inst|parallel_register:program_counter"
+Info (12129): Elaborating entity "adder" using architecture "A:behavioral" for hierarchy "processor:inst|adder:pc_incrementer"
+Info (12129): Elaborating entity "mux" using architecture "A:behavioral" for hierarchy "processor:inst|mux:pc_incrementer_mux"
+Info (12129): Elaborating entity "bus_controller" using architecture "A:behavioral" for hierarchy "processor:inst|bus_controller:io_memory_bus"
+Info (12129): Elaborating entity "io_controller" using architecture "A:behavioral" for hierarchy "processor:inst|io_controller:io_data_controller"
+Info (12129): Elaborating entity "ram" using architecture "A:behavioral" for hierarchy "processor:inst|ram:ram"
+Info (12129): Elaborating entity "shifter" using architecture "A:behavioral" for hierarchy "processor:inst|shifter:shifter"
+Info (12129): Elaborating entity "alu" using architecture "A:behavioral" for hierarchy "processor:inst|alu:alu"
+Info (12128): Elaborating entity "parallel_register" for hierarchy "processor:inst|parallel_register:status_register"
+Info (12129): Elaborating entity "mux" using architecture "A:behavioral" for hierarchy "processor:inst|mux:m1"
+Warning (113028): 995 out of 1024 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
+    Warning (113027): Addresses ranging from 29 to 1023 are not initialized
+Warning (276020): Inferred RAM node "processor:inst|ram:ram|s_memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "processor:inst|ram:ram|s_memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 10
+        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 10
+        Info (286033): Parameter NUMWORDS_B set to 1024
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to quanta.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "processor:inst|ram:ram|altsyncram:s_memory_rtl_0"
+Info (12133): Instantiated megafunction "processor:inst|ram:ram|altsyncram:s_memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "10"
+    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "10"
+    Info (12134): Parameter "NUMWORDS_B" = "1024"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "quanta.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pmk1.tdf
+    Info (12023): Found entity 1: altsyncram_pmk1
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Vinicius/quanta/Hardware/quanta/output_files/quanta.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3768 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 120 output pins
+    Info (21061): Implemented 3593 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 654 megabytes
+    Info: Processing ended: Tue Sep 05 21:14:50 2017
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Vinicius/quanta/Hardware/quanta/output_files/quanta.map.smsg.
+
+

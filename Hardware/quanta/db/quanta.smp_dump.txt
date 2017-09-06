@@ -1,0 +1,11 @@
+
+State Machine - |quanta|processor:inst|controller:controller|s_state
+Name s_state.execute_4 s_state.execute_3 s_state.execute_2 s_state.execute_1 s_state.execute_0 s_state.fetch_2 s_state.fetch_1 s_state.fetch_0 
+s_state.fetch_0 0 0 0 0 0 0 0 0 
+s_state.fetch_1 0 0 0 0 0 0 1 1 
+s_state.fetch_2 0 0 0 0 0 1 0 1 
+s_state.execute_0 0 0 0 0 1 0 0 1 
+s_state.execute_1 0 0 0 1 0 0 0 1 
+s_state.execute_2 0 0 1 0 0 0 0 1 
+s_state.execute_3 0 1 0 0 0 0 0 1 
+s_state.execute_4 1 0 0 0 0 0 0 1 

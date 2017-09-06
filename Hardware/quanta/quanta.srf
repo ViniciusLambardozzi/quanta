@@ -1,0 +1,2 @@
+{ "" "" "" "Entity \"mux\" obtained from \"src/vhdl/component/Multiplexer.vhd\" instead of from Quartus II megafunction library" {  } {  } 0 12090 "" 0 0 "Quartus II" 0 -1 0 ""}
+{ "" "" "" "Parallel compilation is not licensed and has been disabled" {  } {  } 0 20028 "" 0 0 "Quartus II" 0 -1 0 ""}

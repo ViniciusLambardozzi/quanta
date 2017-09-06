@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="quanta">
+		<CBX_INST_ENTRY INSTANCE_NAME="|quanta|processor:inst|ram:ram|altsyncram:s_memory_rtl_0" CBX_FILE_NAME="altsyncram_pmk1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

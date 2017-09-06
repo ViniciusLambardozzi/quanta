@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 7",
+		"os_version" : "6.2"
+	},
+	"error" : {
+		"error_message" : "Access Violation at 0X00007FFAB3D40BDD",
+		"source_file" : "unknown",
+		"line" : "0",
+		"stack_trace" : "\t0x7ffab3d40bdc: (RtlEnterCriticalSection + 0xc)\n\t0x7ffa5840d49e: (DrvValidateVersion + 0x173e)\n\t0x7ffa5840ce7b: (DrvValidateVersion + 0x111b)\n\t0x7ffab18328ce: (EmptyClipboard + 0x2ee)\n\t0x7ffab183265b: (EmptyClipboard + 0x7b)\n\t0x7ffab1822562: (MapWindowPoints + 0x532)\n\t0x7ffab3db9c53: (KiUserCallbackDispatcher + 0x23)\n\t0x7ffab1012423: (NtUserDestroyWindow + 0x13)\n\t 0x65050d13: (Tcl_FinalizeNotifier + 0x43)\n\t 0x65010ca3: (TclFinalizeNotifier + 0xf3)\n\t 0x64fd4347: (Tcl_FinalizeThread + 0x77)\n\t 0x64fd4157: (Tcl_Finalize + 0x167)\n\t 0x65044cee: (DllMain + 0x2e)\n\t 0x65060f7a: (__DllMainCRTStartup + 0x8e)\n\t0x7ffab3d3a35e: (RtlDeactivateActivationContextUnsafeFast + 0x1be)\n\t0x7ffab3d1806a: (LdrShutdownProcess + 0x14a)\n\t0x7ffab3d17d93: (RtlExitUserProcess + 0xb3)\n\t0x7ffab159ce69: (ExitProcess + 0x9)\n\t 0x650d0ccc: (_get_pgmptr + 0x248)\n\t0x7ff6afb213f5:\n\t0x7ffab1588363: (BaseThreadInitThunk + 0x13)\n\t0x7ffab3d770d0: (RtlUserThreadStart + 0x20)\n",
+		"subsystem" : "unknown",
+		"executable" : "quartus",
+		"comment" : ""
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "14.0.0",
+		"build" : "200",
+		"edition" : "Web Edition"
+	}
+}

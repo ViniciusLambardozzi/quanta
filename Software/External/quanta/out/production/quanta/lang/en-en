@@ -1,0 +1,6 @@
+#Locale language id
+id=en-en
+
+#Locale instruction values
+instruction.add=add
+instruction.subtract=sub

@@ -1,0 +1,38 @@
+li $0, 0; # zero
+li $1, 1; # one
+li $2, 5; # n
+li $3, 0;
+li $4, 0;
+li $5, 0;
+li $6, 0;
+li $7, 0;
+li $8, 0;
+li $9, 0;
+li $10, 0;
+li $11, 0;
+li $12, 0;
+li $13, 0;
+li $14, 0;
+li $15, 0;
+li $16, 0;
+li $17, 0;
+li $18, 0;
+li $19, 0;
+li $20, 0;
+li $21, 0;
+li $22, 0;
+li $23, 0;
+li $24, 0;
+li $25, 0;
+li $26, 33;
+li $27, 0; # function address
+li $4, 0; # return value
+li $29, 2; # argument 0
+li $30, 5; # argument 1
+li $31, 37; # return address
+li $4, 0;
+jeq $29, $0, $31; # stop and return
+sub $29, $1;
+add $4, $30;
+j $26;
+j $31;

@@ -1,5 +1,5 @@
 MIF/HEX Update report for quanta
-Thu Aug 31 21:37:09 2017
+Mon Sep 11 11:19:32 2017
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -33,22 +33,24 @@ agreement for further details.
 
 
 
-+-----------------------------------------------------------+
-; MIF/HEX Update Summary                                    ;
-+-----------------------+-----------------------------------+
-; MIF/HEX Update Status ; Failed - Thu Aug 31 21:37:09 2017 ;
-; Revision Name         ; quanta                            ;
-; Top-level Entity Name ; quanta                            ;
-; Family                ; Cyclone IV E                      ;
-; Device                ; EP4CE115F29C7                     ;
-+-----------------------+-----------------------------------+
++---------------------------------------------------------------+
+; MIF/HEX Update Summary                                        ;
++-----------------------+---------------------------------------+
+; MIF/HEX Update Status ; Successful - Mon Sep 11 11:19:32 2017 ;
+; Revision Name         ; quanta                                ;
+; Top-level Entity Name ; quanta                                ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE115F29C7                         ;
++-----------------------+---------------------------------------+
 
 
-+--------------------------------+
-; MIF/HEX Update Processed Files ;
-+--------------------------------+
-; File Name                      ;
-+--------------------------------+
++-----------------------------------------------+
+; MIF/HEX Update Processed Files                ;
++-----------------------------------------------+
+; File Name                                     ;
++-----------------------------------------------+
+; C:/Vinicius/quanta/Hardware/quanta/quanta.mif ;
++-----------------------------------------------+
 
 
 +-------------------------+
@@ -57,15 +59,18 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit MIF/HEX Update
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Thu Aug 31 21:37:08 2017
+    Info: Processing started: Mon Sep 11 11:19:30 2017
 Info: Command: quartus_cdb quanta -c quanta --update_mif
 Warning (39023): Can't find Memory Initialization File ../../../../Users/vinic/Desktop/Mif2.mif -- skipped updates for this file
 Warning (39023): Can't find Memory Initialization File ../../../../Users/vinic/Desktop/Mif1.mif -- skipped updates for this file
-Error (39022): Found no valid Memory Initialization File to process
-Error: Quartus II 64-Bit MIF/HEX Update was unsuccessful. 1 error, 2 warnings
-    Error: Peak virtual memory: 627 megabytes
-    Error: Processing ended: Thu Aug 31 21:37:09 2017
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Warning (113028): 985 out of 1024 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
+    Warning (113027): Addresses ranging from 39 to 1023 are not initialized
+Info (39024): Processed the following Memory Initialization File(s)
+    Info (39025): Processed Memory Initialization File C:/Vinicius/quanta/Hardware/quanta/quanta.mif
+Info: Quartus II 64-Bit MIF/HEX Update was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 628 megabytes
+    Info: Processing ended: Mon Sep 11 11:19:33 2017
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

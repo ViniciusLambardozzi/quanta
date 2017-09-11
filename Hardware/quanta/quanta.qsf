@@ -144,7 +144,7 @@ set_global_assignment -name BDF_FILE tmp/old.bdf
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
-set_global_assignment -name SMART_RECOMPILE OFF
+set_global_assignment -name SMART_RECOMPILE ON
 set_location_assignment PIN_R24 -to buttons[3]
 set_location_assignment PIN_N21 -to buttons[2]
 set_location_assignment PIN_M21 -to buttons[1]

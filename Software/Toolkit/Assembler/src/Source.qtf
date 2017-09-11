@@ -1,0 +1,56 @@
+li $0, 64; # stack pointer
+li $1, 0; # zero
+li $2, 1; # one
+li $3, 3; # arg0
+li $4, 0; # arg1
+li $5, 1; # ret
+li $6, 0; # ra
+li $7, 36; # fact label
+li $8, 44; # rewind label
+li $9, 52; # multiply label
+li $10, 51; # multiply return
+li $11, 56; # end
+li $12, 0; # multiply tmp
+li $13, 0;
+li $14, 0;
+li $15, 0;
+li $16, 0;
+li $17, 0;
+li $18, 0;
+li $19, 0;
+li $20, 0;
+li $21, 0;
+li $22, 0;
+li $23, 0;
+li $24, 0;
+li $25, 0;
+li $26, 0;
+li $27, 0;
+li $28, 0;
+li $29, 0;
+li $30, 0;
+li $31, 0;
+li $6, 35; # load return address for link
+j $7; # call factorial
+j $11; # jump to end when done
+jeq $3, $1, $8 # factorial function label # jeq $arg0, $zero, $rewind
+store $3, $0; # store arg0 on the stack
+add $0, $2; # increment stack pointer
+store $6, $0; # store ra on the stack
+add $0, $2; # increment stack pointer
+sub $3, $2; # subtract 1 from arg0 for recursive call
+li $6, 44; # load return address for link
+j $7; # recursive call on n-1
+sub $0, $2; # decrement stack pointer
+load $6, $0; # load return address from stack
+sub $0, $2; # decrement stack pointer
+load $3, $0; # rewind # load arg0 from past call
+mov $12, $5; # copy ret to multiplication tmp
+li $5, 0; # reset return register for multiplication
+j $9; # jump to multiplication
+j $6; # return
+jeq $12, $1, $10; # multiplication function arg0 = arg0.ret # if done return
+sub $12, $2;
+add $5, $3;
+j $9;
+j $11;

@@ -1,0 +1,32 @@
+li $0, 0  ; const 0
+li $1, 1  ; const 1
+
+li $28, 0 ; arg0
+li $29, 0 ; arg1
+li $30, 0 ; return
+li $30, 0 ; return address
+
+li $5, 512 ; stack pointer
+
+; set IO address registers
+
+li $2, 1  ; hex displays
+li $3, 3  ; buttons
+li $4, 3  ; switches
+
+li $27, 31
+.shiftAddress:
+    lsl $2
+    sub $27, $1
+    jne $27, $0, shiftAddress
+
+li $27, 30
+.shiftInputAddress:
+    lsl $3
+    lsl $4
+    sub $27, $1
+    jne $27, $0, shiftInputAddress
+
+or $4, $1
+
+

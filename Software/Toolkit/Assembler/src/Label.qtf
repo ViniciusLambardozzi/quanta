@@ -1,25 +1,29 @@
+; const definitions
 li $0, 0  ; const 0
 li $1, 1  ; const 1
 
-li $28, 0 ; arg0
-li $29, 0 ; arg1
-li $30, 0 ; return
+; convention register definition
+li $27, 0 ; arg0
+li $28, 0 ; arg1
+li $29, 0 ; return
 li $30, 0 ; return address
 
+; set the stack pointer to a RAM address
 li $5, 512 ; stack pointer
 
 ; set IO address registers
-
 li $2, 1  ; hex displays
 li $3, 3  ; buttons
 li $4, 3  ; switches
 
+; address of the hex displays has the most significant bit set
 li $27, 31
 .shiftAddress:
     lsl $2
     sub $27, $1
     jne $27, $0, shiftAddress
 
+; address of buttons and switches has the 2 most significant bits set
 li $27, 30
 .shiftInputAddress:
     lsl $3
@@ -27,6 +31,52 @@ li $27, 30
     sub $27, $1
     jne $27, $0, shiftInputAddress
 
+; address of switches also has the least significant bit set
 or $4, $1
 
+; main routine
+.main:
+    ; wait for user input
+    call getInput
 
+    ; get the input from return register, move it to arg0 and call factorial
+    mov $27, $29
+    call factorial
+
+    ; get the result of the factorial, move it to arg0 and print it
+    mov $27, $29
+    call printHex
+
+    j end
+
+; wait for a button press, then return the switches
+.getInput:
+    load $6, $3
+    li $7, 14
+
+    load $27, $4
+
+    ; store return address in stack before subroutine call
+    store $30, $5
+    call printHex
+    load $30, $5
+
+    jne $6, $7, getInput
+
+    mov $29, $27
+    j $30
+
+; output arg0 to hex displays
+.printHex:
+    store $27, $2
+    j $30
+
+; recursive factorial of arg0 (uses black magic)
+.factorial:
+    mov $29, $27
+    add $29, $1
+    j $30
+
+; infinite loop to stall execution
+.end:
+    j end

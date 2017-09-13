@@ -91,5 +91,5 @@ PACKAGE controller_constants IS
 		CONSTANT c_opcode_loadImediate : POSITIVE := 01;
 		
 	-- REGISTERS
-		CONSTANT c_register_returnAddress : POSITIVE := 31;
+		CONSTANT c_register_returnAddress : POSITIVE := 30;
 END PACKAGE;

@@ -716,14 +716,14 @@ BEGIN
 							
 						WHEN c_opcode_jumpAndLink =>
 							-- Store PC into jump register
-								out_en(c_clock_registerbank + TO_INTEGER(UNSIGNED(in_ir(23 DOWNTO 19)))) <= '1';
+								out_en(c_clock_registerbank + c_register_returnAddress) <= '1';
 								
 							s_state <= execute_2;
 							
 						-- VHDL forces code to catch all cases
 						-- Invalid cases should never get passed execute 0
 						WHEN OTHERS =>
-							-- NOOP
+						s_state <= fetch_0;
 					END CASE;
 					
 				WHEN execute_2 =>

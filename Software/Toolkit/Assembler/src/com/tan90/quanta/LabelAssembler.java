@@ -72,13 +72,14 @@ public class LabelAssembler
                 Addresses.put(Label, CurrentInstruction);
             }else
             {
-                if((Line.startsWith(LibKeywords.Default.JUMP)              && (!Line.startsWith(LibKeywords.Default.JUMP + " " + LibSymbols.REGISTER_PREFIX             ))) ||
-                   (Line.startsWith(LibKeywords.Default.JUMP_EQUALS)       && (!Line.startsWith(LibKeywords.Default.JUMP_EQUALS + " " + LibSymbols.REGISTER_PREFIX      ))) ||
-                   (Line.startsWith(LibKeywords.Default.JUMP_GREATER_THEN) && (!Line.startsWith(LibKeywords.Default.JUMP_GREATER_THEN + " " + LibSymbols.REGISTER_PREFIX))) ||
-                   (Line.startsWith(LibKeywords.Default.JUMP_LESSER_THEN)  && (!Line.startsWith(LibKeywords.Default.JUMP_LESSER_THEN + " " + LibSymbols.REGISTER_PREFIX ))) ||
-                   (Line.startsWith(LibKeywords.Default.JUMP_NOT_EQUALS)   && (!Line.startsWith(LibKeywords.Default.JUMP_NOT_EQUALS + " " + LibSymbols.REGISTER_PREFIX  ))) ||
-                   (Line.startsWith(LibKeywords.Default.JUMP_AND_LINK)   && (!Line.startsWith(LibKeywords.Default.JUMP_AND_LINK + " " + LibSymbols.REGISTER_PREFIX  ))) )
+                if((Line.startsWith(LibKeywords.Default.JUMP              + " ") && (!Line.startsWith(LibKeywords.Default.JUMP + " " + LibSymbols.REGISTER_PREFIX            ))) ||
+                   (Line.startsWith(LibKeywords.Default.JUMP_EQUALS       + " ") && ((Line.length() - Line.replace(LibSymbols.REGISTER_PREFIX, "").length() != 3 ))) ||
+                   (Line.startsWith(LibKeywords.Default.JUMP_GREATER_THEN + " ") && ((Line.length() - Line.replace(LibSymbols.REGISTER_PREFIX, "").length() != 3 ))) ||
+                   (Line.startsWith(LibKeywords.Default.JUMP_LESSER_THEN  + " ") && ((Line.length() - Line.replace(LibSymbols.REGISTER_PREFIX, "").length() != 3 ))) ||
+                   (Line.startsWith(LibKeywords.Default.JUMP_NOT_EQUALS   + " ") && ((Line.length() - Line.replace(LibSymbols.REGISTER_PREFIX, "").length() != 3 ))) ||
+                   (Line.startsWith(LibKeywords.Default.JUMP_AND_LINK     + " ")  ) )
                 {
+                    System.out.println("Double instruction line found: " + Line);
                     CurrentInstruction++;
                 }
                 CurrentInstruction++;

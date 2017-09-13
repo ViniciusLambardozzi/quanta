@@ -73,9 +73,62 @@ or $4, $1
 
 ; recursive factorial of arg0 (uses black magic)
 .factorial:
-    mov $29, $27
-    add $29, $1
+    ; base case, arg0 is 0, return 1
+    jeq $27, $0, baseCase
+
+    li $27, 14
+    store $27, $2
+    j end
+
+    ; store ra and current value on stack
+    store $30, $5
+    add $5, $1
+    store $27, $5
+    add $5, $1
+
+    ; subtract 1 from the parameter
+    sub $27, $1
+
+    ; recursive call
+    call factorial
+
+    ; rewind recursion
+    ; restore current value and ra
+    sub $5, $1
+    load $27, $5
+    sub $5, $1
+    load $30, $5
+
+    ; calculate n * (n-1)! and return
+    mov $29, $28
+
+    ; store return address
+    store $30, $5
+    call multiply
+    load $30, $5
+
+    ; return
     j $30
+
+    .baseCase:
+        mov $29, $1
+        j $30
+
+; multiply arg0 by arg1
+.multiply:
+    ; save a copy of arg1 as iterator
+    mov $26, $28
+    ; initialize return value as 0
+    mov $29, 0
+
+    .multiplyLoop:
+        ; return if multiplying by 0
+        jeq $26, $0, $30
+        ; consecutive sum
+        add $29, $27
+        sub $26, $1
+        j multiplyLoop
+
 
 ; infinite loop to stall execution
 .end:

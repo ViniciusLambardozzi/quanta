@@ -76,9 +76,11 @@ or $4, $1
     ; base case, arg0 is 0, return 1
     jeq $27, $0, baseCase
 
-    li $27, 14
-    store $27, $2
-    j end
+    ; debug block
+    ; prints E to the hex displays
+    ; li $27, 14
+    ; store $27, $2
+    ; j end
 
     ; store ra and current value on stack
     store $30, $5
@@ -100,7 +102,7 @@ or $4, $1
     load $30, $5
 
     ; calculate n * (n-1)! and return
-    mov $29, $28
+    mov $28, $29
 
     ; store return address
     store $30, $5

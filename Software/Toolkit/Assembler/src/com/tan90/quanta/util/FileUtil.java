@@ -1,8 +1,6 @@
 package com.tan90.quanta.util;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class FileUtil
 {
@@ -22,6 +20,17 @@ public class FileUtil
             return stringBuilder.toString();
         } finally {
             reader.close();
+        }
+    }
+
+    public static void WriteFile(String file, String data) throws IOException
+    {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+
+        try {
+            writer.write(data);
+        } finally {
+            writer.close();
         }
     }
 }

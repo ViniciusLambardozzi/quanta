@@ -1,5 +1,5 @@
 MIF/HEX Update report for quanta
-Thu Sep 14 07:24:11 2017
+Mon Oct 02 10:59:52 2017
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Thu Sep 14 07:24:11 2017 ;
+; MIF/HEX Update Status ; Successful - Mon Oct 02 10:59:52 2017 ;
 ; Revision Name         ; quanta                                ;
 ; Top-level Entity Name ; quanta                                ;
 ; Family                ; Cyclone IV E                          ;
@@ -59,7 +59,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit MIF/HEX Update
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Thu Sep 14 07:24:08 2017
+    Info: Processing started: Mon Oct 02 10:59:49 2017
 Info: Command: quartus_cdb quanta -c quanta --update_mif
 Warning (39023): Can't find Memory Initialization File ../../../../Users/vinic/Desktop/Mif2.mif -- skipped updates for this file
 Warning (39023): Can't find Memory Initialization File ../../../../Users/vinic/Desktop/Mif1.mif -- skipped updates for this file
@@ -68,9 +68,9 @@ Warning (113028): 949 out of 1024 addresses are uninitialized. The Quartus II so
 Info (39024): Processed the following Memory Initialization File(s)
     Info (39025): Processed Memory Initialization File C:/Vinicius/quanta/Hardware/quanta/quanta.mif
 Info: Quartus II 64-Bit MIF/HEX Update was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 628 megabytes
-    Info: Processing ended: Thu Sep 14 07:24:11 2017
+    Info: Peak virtual memory: 625 megabytes
+    Info: Processing ended: Mon Oct 02 10:59:52 2017
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

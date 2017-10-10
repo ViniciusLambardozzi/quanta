@@ -50,37 +50,13 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name VHDL_FILE src/vhdl/Processor.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/component/Alu.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/component/Controller.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/component/Multiplexer.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/component/Shifter.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/lib/ControllerConstants.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/lib/Types.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/memory/Ram.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/memory/Register.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/util/Adder.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/util/HexDisplay.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/util/Range.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name BDF_FILE quanta.bdf
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_global_assignment -name CDF_FILE output_files/Processor.cdf
-set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/waveform/RamRead.vwf
 set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "C:/Vinicius/quanta/Hardware/quanta/simulation/qsim/" -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name CDF_FILE output/Programmer.cdf
-set_global_assignment -name VHDL_FILE src/vhdl/controllers/io/MatrixKeyboard.vhd
-set_global_assignment -name BDF_FILE tmp/backup.bdf
-set_global_assignment -name MIF_FILE ../../../../Users/vinic/Desktop/Mif2.mif
-set_global_assignment -name MIF_FILE ../../../../Users/vinic/Desktop/Mif1.mif
-set_global_assignment -name VHDL_FILE src/vhdl/controllers/io/LCDController.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/lib/LCDConstants.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/controllers/io/BusController.vhd
-set_global_assignment -name VHDL_FILE src/vhdl/controllers/io/IoBusController.vhd
 set_location_assignment PIN_G18 -to hex0[6]
 set_location_assignment PIN_F22 -to hex0[5]
 set_location_assignment PIN_E17 -to hex0[4]
@@ -138,9 +114,6 @@ set_location_assignment PIN_AF17 -to hex7[2]
 set_location_assignment PIN_AG18 -to hex7[1]
 set_location_assignment PIN_AA14 -to hex7[0]
 set_location_assignment PIN_Y2 -to sys_clock
-set_global_assignment -name BDF_FILE tmp/display.bdf
-set_global_assignment -name VHDL_FILE src/vhdl/component/LcdController.vhd
-set_global_assignment -name BDF_FILE tmp/old.bdf
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
@@ -167,4 +140,35 @@ set_location_assignment PIN_AD27 -to switches[3]
 set_location_assignment PIN_AC27 -to switches[2]
 set_location_assignment PIN_AC28 -to switches[1]
 set_location_assignment PIN_AB28 -to switches[0]
+set_global_assignment -name VHDL_FILE src/vhdl/Processor.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/component/Alu.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/component/Controller.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/component/Multiplexer.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/component/Shifter.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/lib/ControllerConstants.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/lib/Types.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/memory/Ram.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/memory/Register.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/util/Adder.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/util/HexDisplay.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/util/Range.vhd
+set_global_assignment -name BDF_FILE quanta.bdf
+set_global_assignment -name CDF_FILE output_files/Processor.cdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/waveform/RamRead.vwf
+set_global_assignment -name CDF_FILE output/Programmer.cdf
+set_global_assignment -name VHDL_FILE src/vhdl/controllers/io/MatrixKeyboard.vhd
+set_global_assignment -name BDF_FILE tmp/backup.bdf
+set_global_assignment -name MIF_FILE ../../../../Users/vinic/Desktop/Mif2.mif
+set_global_assignment -name MIF_FILE ../../../../Users/vinic/Desktop/Mif1.mif
+set_global_assignment -name VHDL_FILE src/vhdl/controllers/io/LCDController.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/lib/LCDConstants.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/controllers/io/BusController.vhd
+set_global_assignment -name VHDL_FILE src/vhdl/controllers/io/IoBusController.vhd
+set_global_assignment -name BDF_FILE tmp/display.bdf
+set_global_assignment -name VHDL_FILE src/vhdl/component/LcdController.vhd
+set_global_assignment -name BDF_FILE tmp/old.bdf
+set_global_assignment -name QIP_FILE src/vhdl/pll/pll128.qip
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

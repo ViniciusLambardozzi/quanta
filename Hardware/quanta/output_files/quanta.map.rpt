@@ -1,5 +1,5 @@
 Analysis & Synthesis report for quanta
-Wed Sep 13 11:42:21 2017
+Tue Oct 10 08:38:23 2017
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -101,16 +101,16 @@ agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 13 11:42:21 2017      ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 10 08:38:23 2017      ;
 ; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
 ; Revision Name                      ; quanta                                     ;
 ; Top-level Entity Name              ; quanta                                     ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 3,559                                      ;
-;     Total combinational functions  ; 2,373                                      ;
+; Total logic elements               ; 3,566                                      ;
+;     Total combinational functions  ; 2,380                                      ;
 ;     Dedicated logic registers      ; 1,459                                      ;
 ; Total registers                    ; 1459                                       ;
-; Total pins                         ; 143                                        ;
+; Total pins                         ; 79                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 32,768                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -254,29 +254,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------------+
 ; Resource                                    ; Usage           ;
 +---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 3,559           ;
+; Estimated Total logic elements              ; 3,566           ;
 ;                                             ;                 ;
-; Total combinational functions               ; 2373            ;
+; Total combinational functions               ; 2380            ;
 ; Logic element usage by number of LUT inputs ;                 ;
-;     -- 4 input functions                    ; 1962            ;
-;     -- 3 input functions                    ; 305             ;
-;     -- <=2 input functions                  ; 106             ;
+;     -- 4 input functions                    ; 1963            ;
+;     -- 3 input functions                    ; 350             ;
+;     -- <=2 input functions                  ; 67              ;
 ;                                             ;                 ;
 ; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 2373            ;
+;     -- normal mode                          ; 2380            ;
 ;     -- arithmetic mode                      ; 0               ;
 ;                                             ;                 ;
 ; Total registers                             ; 1459            ;
 ;     -- Dedicated logic registers            ; 1459            ;
 ;     -- I/O registers                        ; 0               ;
 ;                                             ;                 ;
-; I/O pins                                    ; 143             ;
+; I/O pins                                    ; 79              ;
 ; Total memory bits                           ; 32768           ;
 ; Embedded Multiplier 9-bit elements          ; 0               ;
 ; Maximum fan-out node                        ; sys_clock~input ;
 ; Maximum fan-out                             ; 1491            ;
-; Total fan-out                               ; 14250           ;
-; Average fan-out                             ; 3.43            ;
+; Total fan-out                               ; 14183           ;
+; Average fan-out                             ; 3.52            ;
 +---------------------------------------------+-----------------+
 
 
@@ -285,7 +285,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Library Name ;
 +-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
-; |quanta                                               ; 2373 (0)          ; 1459 (0)     ; 32768       ; 0            ; 0       ; 0         ; 143  ; 0            ; |quanta                                                                                 ; work         ;
+; |quanta                                               ; 2380 (0)          ; 1459 (0)     ; 32768       ; 0            ; 0       ; 0         ; 79   ; 0            ; |quanta                                                                                 ; work         ;
 ;    |hex_display:inst1|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst1                                                               ; work         ;
 ;    |hex_display:inst2|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst2                                                               ; work         ;
 ;    |hex_display:inst3|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst3                                                               ; work         ;
@@ -294,17 +294,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |hex_display:inst6|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst6                                                               ; work         ;
 ;    |hex_display:inst7|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst7                                                               ; work         ;
 ;    |hex_display:inst8|                                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|hex_display:inst8                                                               ; work         ;
-;    |processor:inst|                                   ; 2317 (0)          ; 1459 (0)     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst                                                                  ; work         ;
+;    |processor:inst|                                   ; 2324 (0)          ; 1459 (0)     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst                                                                  ; work         ;
 ;       |adder:pc_incrementer|                          ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|adder:pc_incrementer                                             ; work         ;
-;       |alu:alu|                                       ; 321 (189)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu                                                          ; work         ;
-;          |adder:a|                                    ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu|adder:a                                                  ; work         ;
-;          |adder:s|                                    ; 73 (73)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu|adder:s                                                  ; work         ;
+;       |alu:alu|                                       ; 321 (194)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu                                                          ; work         ;
+;          |adder:a|                                    ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu|adder:a                                                  ; work         ;
+;          |adder:s|                                    ; 71 (71)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|alu:alu|adder:s                                                  ; work         ;
 ;       |bus_controller:io_memory_bus|                  ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|bus_controller:io_memory_bus                                     ; work         ;
-;       |controller:controller|                         ; 255 (255)         ; 69 (69)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|controller:controller                                            ; work         ;
+;       |controller:controller|                         ; 263 (263)         ; 69 (69)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|controller:controller                                            ; work         ;
 ;       |io_controller:io_data_controller|              ; 59 (59)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|io_controller:io_data_controller                                 ; work         ;
 ;       |mux:m1|                                        ; 672 (672)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:m1                                                           ; work         ;
 ;       |mux:m2|                                        ; 672 (672)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:m2                                                           ; work         ;
-;       |mux:main_mux|                                  ; 95 (95)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:main_mux                                                     ; work         ;
+;       |mux:main_mux|                                  ; 94 (94)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:main_mux                                                     ; work         ;
 ;       |mux:pc_incrementer_mux|                        ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:pc_incrementer_mux                                           ; work         ;
 ;       |mux:status_mux|                                ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|mux:status_mux                                                   ; work         ;
 ;       |parallel_register:instruction_register|        ; 0 (0)             ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |quanta|processor:inst|parallel_register:instruction_register                           ; work         ;
@@ -550,18 +550,18 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
 ; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |quanta|processor:inst|io_controller:io_data_controller|out_data[17] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |quanta|processor:inst|io_controller:io_data_controller|out_data[0]  ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |quanta|processor:inst|parallel_register:register_a|s_memory[17]     ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |quanta|processor:inst|parallel_register:register_b|s_memory[1]      ;
-; 118:1              ; 4 bits    ; 312 LEs       ; 0 LEs                ; 312 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_sel[8]              ;
-; 256:1              ; 2 bits    ; 340 LEs       ; 0 LEs                ; 340 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_mask[16]            ;
-; 256:1              ; 3 bits    ; 510 LEs       ; 12 LEs               ; 498 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_fun[5]              ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; Yes        ; |quanta|processor:inst|parallel_register:status_register|s_memory[2] ;
-; 263:1              ; 32 bits   ; 5600 LEs      ; 192 LEs              ; 5408 LEs               ; Yes        ; |quanta|processor:inst|controller:controller|out_en[19]              ;
-; 29:1               ; 5 bits    ; 95 LEs        ; 10 LEs               ; 85 LEs                 ; Yes        ; |quanta|processor:inst|controller:controller|out_sel[1]              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |quanta|processor:inst|io_controller:io_data_controller|out_data[3]  ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |quanta|processor:inst|parallel_register:register_a|s_memory[28]     ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |quanta|processor:inst|parallel_register:register_b|s_memory[6]      ;
+; 118:1              ; 4 bits    ; 312 LEs       ; 0 LEs                ; 312 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_sel[6]              ;
+; 256:1              ; 2 bits    ; 340 LEs       ; 0 LEs                ; 340 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_mask[0]             ;
+; 256:1              ; 3 bits    ; 510 LEs       ; 12 LEs               ; 498 LEs                ; Yes        ; |quanta|processor:inst|controller:controller|out_fun[7]              ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; Yes        ; |quanta|processor:inst|parallel_register:status_register|s_memory[0] ;
+; 263:1              ; 32 bits   ; 5600 LEs      ; 192 LEs              ; 5408 LEs               ; Yes        ; |quanta|processor:inst|controller:controller|out_en[14]              ;
+; 29:1               ; 5 bits    ; 95 LEs        ; 10 LEs               ; 85 LEs                 ; Yes        ; |quanta|processor:inst|controller:controller|out_sel[0]              ;
 ; 8:1                ; 32 bits   ; 160 LEs       ; 128 LEs              ; 32 LEs                 ; No         ; |quanta|processor:inst|mux:main_mux|Mux29                            ;
-; 16:1               ; 31 bits   ; 310 LEs       ; 186 LEs              ; 124 LEs                ; No         ; |quanta|processor:inst|alu:alu|Mux11                                 ;
-; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |quanta|processor:inst|shifter:shifter|Mux14                         ;
+; 16:1               ; 31 bits   ; 310 LEs       ; 186 LEs              ; 124 LEs                ; No         ; |quanta|processor:inst|alu:alu|Mux6                                  ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; No         ; |quanta|processor:inst|shifter:shifter|Mux22                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
 
 
@@ -1143,22 +1143,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 143                         ;
+; boundary_port         ; 79                          ;
 ; cycloneiii_ff         ; 1459                        ;
 ;     ENA               ; 1306                        ;
 ;     ENA SLD           ; 21                          ;
 ;     SCLR              ; 2                           ;
 ;     plain             ; 130                         ;
-; cycloneiii_lcell_comb ; 2381                        ;
-;     normal            ; 2381                        ;
+; cycloneiii_lcell_comb ; 2388                        ;
+;     normal            ; 2388                        ;
 ;         1 data inputs ; 11                          ;
-;         2 data inputs ; 103                         ;
-;         3 data inputs ; 305                         ;
-;         4 data inputs ; 1962                        ;
+;         2 data inputs ; 64                          ;
+;         3 data inputs ; 350                         ;
+;         4 data inputs ; 1963                        ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 35.00                       ;
-; Average LUT depth     ; 6.18                        ;
+; Average LUT depth     ; 6.21                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1167,7 +1167,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:22     ;
+; Top            ; 00:00:21     ;
 +----------------+--------------+
 
 
@@ -1177,7 +1177,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Wed Sep 13 11:41:54 2017
+    Info: Processing started: Tue Oct 10 08:37:58 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off quanta -c quanta
 Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/processor.vhd
     Info (12022): Found design unit 1: processor-behavioral
@@ -1238,6 +1238,9 @@ Info (15248): File "C:/Vinicius/quanta/Hardware/quanta/src/vhdl/component/LcdCon
 Info (12021): Found 0 design units, including 0 entities, in source file src/vhdl/component/lcdcontroller.vhd
 Info (12021): Found 1 design units, including 1 entities, in source file tmp/old.bdf
     Info (12023): Found entity 1: old
+Info (12021): Found 2 design units, including 1 entities, in source file src/vhdl/pll/pll128.vhd
+    Info (12022): Found design unit 1: pll128-SYN
+    Info (12023): Found entity 1: pll128
 Info (12127): Elaborating entity "quanta" for the top level hierarchy
 Warning (275011): Block or symbol "hex_display" of instance "inst3" overlaps another block or symbol
 Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:inst1"
@@ -1255,8 +1258,8 @@ Info (12129): Elaborating entity "shifter" using architecture "A:behavioral" for
 Info (12129): Elaborating entity "alu" using architecture "A:behavioral" for hierarchy "processor:inst|alu:alu"
 Info (12128): Elaborating entity "parallel_register" for hierarchy "processor:inst|parallel_register:status_register"
 Info (12129): Elaborating entity "mux" using architecture "A:behavioral" for hierarchy "processor:inst|mux:m1"
-Warning (113028): 979 out of 1024 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
-    Warning (113027): Addresses ranging from 45 to 1023 are not initialized
+Warning (113028): 949 out of 1024 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
+    Warning (113027): Addresses ranging from 75 to 1023 are not initialized
 Warning (276020): Inferred RAM node "processor:inst|ram:ram|s_memory_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "processor:inst|ram:ram|s_memory_rtl_0" 
@@ -1300,16 +1303,16 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Vinicius/quanta/Hardware/quanta/output_files/quanta.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3768 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3711 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 120 output pins
-    Info (21061): Implemented 3593 logic cells
+    Info (21059): Implemented 56 output pins
+    Info (21061): Implemented 3600 logic cells
     Info (21064): Implemented 32 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 658 megabytes
-    Info: Processing ended: Wed Sep 13 11:42:21 2017
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 646 megabytes
+    Info: Processing ended: Tue Oct 10 08:38:23 2017
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+

@@ -394,8 +394,8 @@ public class LabelAssembler
 
     public static void main(String[] args) throws Exception
     {
-        String Input = FileUtil.ReadFile("src/Label.qtf");
+        String Input = FileUtil.ReadFile(args[0].substring(1) + ".qtf");
         String Program = LabelAssembler.Assemble(Input);
-        System.out.println(MifParser.MifFileString(Program, false));
+        FileUtil.WriteFile(args[1].substring(1) + ".mif", MifParser.MifFileString(Program, false));
     }
 }

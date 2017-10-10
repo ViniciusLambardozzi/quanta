@@ -29,7 +29,7 @@ ENTITY controller IS
 		
 		-- Processor control signals
 		out_mask : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		out_en  : OUT STD_LOGIC_VECTOR(40 DOWNTO 0);
+		out_en   : OUT STD_LOGIC_VECTOR(40 DOWNTO 0);
 		out_fun  : OUT STD_LOGIC_VECTOR( 9 DOWNTO 0) := STD_LOGIC_VECTOR(TO_UNSIGNED(0, 10));
 		out_sel  : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) := STD_LOGIC_VECTOR(TO_UNSIGNED(0, 16))
 	);
@@ -176,6 +176,9 @@ BEGIN
 								
 							-- Set alu to pass
 								out_fun(c_function_alu + c_function_alu_width - 1 DOWNTO c_function_alu) <= "0011";
+							
+							-- Set main multiplexer to alu output
+								out_sel(c_select_mux_main + c_select_mux_main_width - 1 DOWNTO c_select_mux_main) <= "001";
 								
 							-- Set state to execute 1
 								s_state <= execute_1;
@@ -493,8 +496,6 @@ BEGIN
 						-- Move
 						WHEN c_opcode_moveDirect =>
 							-- Move value from source to destination
-							-- Set main multiplexer to alu output
-								out_sel(c_select_mux_main + c_select_mux_main_width - 1 DOWNTO c_select_mux_main) <= "001";
 							-- Load result to destination register
 								out_en(c_clock_registerbank + TO_INTEGER(UNSIGNED(in_ir(23 DOWNTO 19)))) <= '1';
 							-- Finish cycle

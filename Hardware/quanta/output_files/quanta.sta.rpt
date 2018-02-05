@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for quanta
-Tue Oct 10 08:40:40 2017
+Mon Nov 06 07:22:59 2017
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -2452,7 +2452,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-    Info: Processing started: Tue Oct 10 08:40:18 2017
+    Info: Processing started: Mon Nov 06 07:22:43 2017
 Info: Command: quartus_sta quanta -c quanta
 Info: qsta_default_script.tcl version: #1
 Info (21077): Core supply voltage is 1.2V
@@ -2483,8 +2483,6 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000           -1920.903 sys_clock 
 Info: Analyzing Slow 1200mV 0C Model
-Info (334003): Started post-fitting delay annotation
-Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
@@ -2524,10 +2522,10 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info (144001): Generated suppressed messages file C:/Vinicius/quanta/Hardware/quanta/output_files/quanta.sta.smsg
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 664 megabytes
-    Info: Processing ended: Tue Oct 10 08:40:40 2017
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 654 megabytes
+    Info: Processing ended: Mon Nov 06 07:22:59 2017
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +-----------------------------------------------+

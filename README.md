@@ -1,2 +1,2 @@
 # quanta
-You don't need to know what this is. Go away. Now.
+Educational soft processor for the Altera DE2-115 development board.

@@ -75,7 +75,7 @@ BEGIN
 	-- Instantiate subtractor          
 	s: ENTITY WORK.adder(behavioral)
 	PORT MAP
-    (
+   (
 		in_a,
 		NOT(in_b),
 		NOT(in_cin),

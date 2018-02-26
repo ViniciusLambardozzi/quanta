@@ -13,7 +13,6 @@ entity quanta is
         hex5            : out    vl_logic_vector(6 downto 0);
         hex6            : out    vl_logic_vector(6 downto 0);
         hex7            : out    vl_logic_vector(6 downto 0);
-        pc              : out    vl_logic_vector(31 downto 0);
-        r31             : out    vl_logic_vector(31 downto 0)
+        pc              : out    vl_logic_vector(31 downto 0)
     );
 end quanta;

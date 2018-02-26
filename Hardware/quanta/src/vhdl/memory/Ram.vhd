@@ -46,7 +46,7 @@ BEGIN
     PROCESS(in_en, in_clk)
     BEGIN
         -- Read/Write to memory on rising edge if enabled
-        IF(in_en = '1' AND rising_edge(in_clk)) THEN
+        IF(in_en = '1' AND RISING_EDGE(in_clk)) THEN
             IF(in_we = '1') THEN
                 -- Write input word to addr
                 s_memory(CONV_INTEGER(in_addr)) <= in_data;

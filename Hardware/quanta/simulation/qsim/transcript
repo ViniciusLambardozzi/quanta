@@ -18,16 +18,19 @@
 # Loading work.quanta
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
-# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
 # Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
 # Loading cycloneive_ver.cycloneive_ram_block
 # Loading cycloneive_ver.cycloneive_ram_register
 # Loading cycloneive_ver.cycloneive_ram_pulse_generator
 # Loading work.quanta_vlg_sample_tst
 # Loading work.quanta_vlg_check_tst
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 14214 statements exceeds ModelSim Altera Starter recommended capacity.
+# ** Warning: Design size of 13282 statements exceeds ModelSim Altera Starter recommended capacity.
 # Expect performance to be adversely affected.
 # Simulation passed !
-# ** Note: $finish    : RamRead.vwf.vt(755)
+# ** Note: $finish    : RamRead.vwf.vt(750)
 #    Time: 40 us  Iteration: 0  Instance: /quanta_vlg_vec_tst/tb_out

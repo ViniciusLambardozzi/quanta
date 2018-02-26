@@ -37,14 +37,15 @@ BEGIN
 	-- HEX DISPLAYS
 	PROCESS(in_we, in_addr, in_en, in_clk)
 	BEGIN
-				IF(FALLING_EDGE(in_clk) AND in_we = '1' AND in_en = '1') THEN
+				IF(RISING_EDGE(in_clk) AND in_we = '1' AND in_en = '1') THEN
 					CASE(in_addr) IS
 						WHEN "10000000000000000000000000000000" =>
 							out_hex <= in_data;
 						WHEN OTHERS =>
 					END CASE;
 				END IF;
-				IF(FALLING_EDGE(in_clk) AND in_we = '0' AND in_en = '1') THEN
+				
+				IF(RISING_EDGE(in_clk) AND in_we = '0' AND in_en = '1') THEN
 					CASE(in_addr) IS
 						WHEN "10000000000000000000000000000000" =>
 							out_data <= out_hex;

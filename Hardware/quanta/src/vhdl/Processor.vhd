@@ -19,8 +19,8 @@ ENTITY processor IS
 		--ir : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		--mar : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		--mdr : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		pc : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		r0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		--pc : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		--r0 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		--r1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		--r2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		--r3 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -145,8 +145,8 @@ BEGIN
 	--ir(31 DOWNTO 0) <= s_ir_output(31 DOWNTO 0);
 	--mar(31 DOWNTO 0) <= s_mar_output(31 DOWNTO 0);
 	--mdr(31 DOWNTO 0) <= s_mdr_output(31 DOWNTO 0);
-	pc(31 DOWNTO 0) <= s_pc_output(31 DOWNTO 0);
-	r0(31 DOWNTO 0) <= s_reg_31(31 DOWNTO 0);
+	--pc(31 DOWNTO 0) <= s_ram_output(31 DOWNTO 0);
+	--r0(31 DOWNTO 0) <= s_reg_31(31 DOWNTO 0);
 	--r1(31 DOWNTO 0) <= s_reg_01(31 DOWNTO 0);
 	--r2(31 DOWNTO 0) <= s_reg_02(31 DOWNTO 0);
 	--r3(31 DOWNTO 0) <= s_reg_03(31 DOWNTO 0);
@@ -204,8 +204,8 @@ BEGIN
 	PORT MAP
 	(
 		s_pc_output,
-        STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
-        '1',
+      STD_LOGIC_VECTOR(TO_UNSIGNED(0, 32)),
+      '1',
 		s_pc_incrementer_output,
 		OPEN
 	);
@@ -238,7 +238,7 @@ BEGIN
 	memory_destination_register: ENTITY WORK.parallel_register(behavioral)
 	PORT MAP
 	(
-	s_mdr_input,
+		s_ram_output,
 		s_controller_en(c_clock_mdr),
 		system_clock,
 		s_mdr_output
@@ -254,52 +254,72 @@ BEGIN
 		s_ir_output
 	);
 	
-	-- IO/Memory bus controller
-	io_memory_bus: ENTITY WORK.bus_controller(behavioral)
+	-- Memory mapped IO controller
+	mem_io: ENTITY WORK.ram_io(behavioral)
 	PORT MAP
 	(
-		s_mar_output,
-		s_main_mux_output,
-		s_io_output,
-		s_ram_output,
+		s_main_mux_output, -- mem_io data
+		s_mar_output, -- mem_io addr
+		
+		buttons, -- board buttons 
+		switches, -- board switches
+		
+		s_controller_fun(c_function_ram_we),   -- mem_io combined write enable
 		s_controller_en(c_clock_ram),
-		s_bus_addr,
-		s_bus_data,
-		s_mdr_input,
-		s_ram_enable,
-		s_io_enable
-	);
-	
-	-- IO controller	
-	io_data_controller: ENTITY WORK.io_controller(behavioral)
-	PORT MAP
-	(
-		s_bus_data,
-		s_bus_addr,
-		s_controller_fun(c_function_ram_we),
-		s_io_enable,
+		
 		system_clock,
-		buttons,
-		switches,
-		s_io_output,
+		-------------------------------------------
+		s_ram_output, -- fans out to registers
+		
 		s_hex_output
 	);
 	
-	-- Ram block
-	ram: ENTITY WORK.ram(behavioral)
-	GENERIC MAP
-	(
-		g_addr_width => 10
-	)
-	PORT MAP
-	(
-		s_bus_data,
-		s_bus_addr(9 DOWNTO 0),
-		s_controller_fun(c_function_ram_we),
-		s_ram_enable,
-		system_clock,
-		s_ram_output	
-	);
+--	-- IO/Memory bus controller
+--	io_memory_bus: ENTITY WORK.bus_controller(behavioral)
+--	PORT MAP
+--	(
+--		s_mar_output,
+--		s_main_mux_output,
+--		s_io_output,
+--		s_ram_output,
+--		s_controller_en(c_clock_ram),
+--		s_bus_addr,
+--		s_bus_data,
+--		s_mdr_input,
+--		s_ram_enable,
+--		s_io_enable
+--	);
+	
+--	-- IO controller	
+--	io_data_controller: ENTITY WORK.io_controller(behavioral)
+--	PORT MAP
+--	(
+--		s_bus_data,
+--		s_bus_addr,
+--		s_controller_fun(c_function_ram_we),
+--		s_io_enable,
+--		system_clock,
+--		buttons,
+--		switches,
+--		s_io_output,
+--		s_hex_output
+--	);
+	
+--	-- Ram block
+--	ram: ENTITY WORK.ram(behavioral)
+--	GENERIC MAP
+--	(
+--		g_addr_width => 10
+--	)
+--	PORT MAP
+--	(
+--		s_bus_data,
+--		s_bus_addr(9 DOWNTO 0),
+--		s_controller_fun(c_function_ram_we),
+--		s_ram_enable,
+--		system_clock,
+--		s_ram_output	
+--	);
 	
 	
 	

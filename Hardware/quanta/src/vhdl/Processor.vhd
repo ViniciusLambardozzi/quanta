@@ -1,6 +1,5 @@
 -----------------------------------
 -- PROCESSOR                     --
--- Test bench for now            --
 -----------------------------------
 
 LIBRARY ieee;
@@ -389,384 +388,406 @@ BEGIN
 		s_status_register_output
 	);
 	
-	-- Register bank registers
-	r00: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(0),
-         system_clock,
-			s_reg_00
-		);
-		
-		r01: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(1),
-         system_clock,
-			s_reg_01
-		);
-		
-		r02: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(2),
-         system_clock,
-			s_reg_02
-		);
-		
-		r03: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(3),
-         system_clock,
-			s_reg_03
-		);
-		
-		r04: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(4),
-         system_clock,
-			s_reg_04 
-		);
-		
-		r05: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(5),
-         system_clock,
-			s_reg_05
-		);
-		
-		r06: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(6),
-         system_clock,
-			s_reg_06
-		);
-		
-		r07: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(7),
-         system_clock,
-			s_reg_07
-		);
-		
-		r08: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(8),
-         system_clock,
-			s_reg_08
-		);
-		
-		r09: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(9),
-         system_clock,
-			s_reg_09
-		);
-		
-		r10: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(10),
-         system_clock,
-			s_reg_10
-		);
-		
-		r11: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(11),
-         system_clock,
-			s_reg_11
-		);
-		
-		r12: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(12),
-         system_clock,
-			s_reg_12
-		);
-		
-		r13: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(13),
-         system_clock,
-			s_reg_13
-		);
-		
-		r14: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(14),
-         system_clock,
-			s_reg_14
-		);
-		
-		r15: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(15),
-         system_clock,
-			s_reg_15
-		);
-		
-		r16: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(16),
-         system_clock,
-			s_reg_16
-		);
-		
-		r17: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(17),
-         system_clock,
-			s_reg_17
-		);
-		
-		r18: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(18),
-         system_clock,
-			s_reg_18
-		);
-		
-		r19: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(19),
-         system_clock,
-			s_reg_19
-		);
-		
-		r20: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(20),
-         system_clock,
-			s_reg_20
-		);
-		
-		r21: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(21),
-         system_clock,
-			s_reg_21
-		);
-		
-		r22: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(22),
-         system_clock,
-			s_reg_22
-		);
-		
-		r23: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(23),
-         system_clock,
-			s_reg_23
-		);
-		
-		r24: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(24),
-         system_clock,
-			s_reg_24
-		);
-		
-		r25: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(25),
-            system_clock,
-			s_reg_25
-		);
-		
-		r26: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(26),
-         system_clock,
-			s_reg_26
-		);
-		
-		r27: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(27),
-         system_clock,
-			s_reg_27
-		);
-		
-		r28: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(28),
-         system_clock,
-			s_reg_28
-		);
-		
-		r29: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(29),
-         system_clock,
-			s_reg_29
-		);
-		
-		r30: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(30),
-         system_clock,
-			s_reg_30
-		);
-		
-		r31: ENTITY WORK.parallel_register(behavioral)
-		PORT MAP
-		(
-			s_main_mux_output,
-			s_controller_en(31),
-         system_clock,
-			s_reg_31
-		);
-		
-		-- Register bank data output a multiplexer driven by selection signal
-		m1: ENTITY WORK.mux(behavioral)
-		GENERIC MAP
-		(
-			g_selection_width => 5
-		)
-		PORT MAP
-		(
-			in_i(0) => s_reg_00,
-			in_i(1) => s_reg_01,
-			in_i(2) => s_reg_02,
-			in_i(3) => s_reg_03,
-			in_i(4) => s_reg_04,
-			in_i(5) => s_reg_05,
-			in_i(6) => s_reg_06,
-			in_i(7) => s_reg_07,
-			in_i(8) => s_reg_08,
-			in_i(9) => s_reg_09,
-			in_i(10) => s_reg_10,
-			in_i(11) => s_reg_11,
-			in_i(12) => s_reg_12,
-			in_i(13) => s_reg_13,
-			in_i(14) => s_reg_14,
-			in_i(15) => s_reg_15,
-			in_i(16) => s_reg_16,
-			in_i(17) => s_reg_17,
-			in_i(18) => s_reg_18,
-			in_i(19) => s_reg_19,
-			in_i(20) => s_reg_20,
-			in_i(21) => s_reg_21,
-			in_i(22) => s_reg_22,
-			in_i(23) => s_reg_23,
-			in_i(24) => s_reg_24,
-			in_i(25) => s_reg_25,
-			in_i(26) => s_reg_26,
-			in_i(27) => s_reg_27,
-			in_i(28) => s_reg_28,
-			in_i(29) => s_reg_29,
-			in_i(30) => s_reg_30,
-			in_i(31) => s_reg_31,
-			in_sel => s_controller_sel(c_select_mux_registerbank_a + c_select_mux_registerbank_width - 1 DOWNTO c_select_mux_registerbank_a),
-			out_o => s_register_bank_output_a
-		);
-		
-		-- Register bank data output b multiplexer driven by selection signal
-		m2: ENTITY WORK.mux(behavioral)
-		GENERIC MAP
-		(
-			g_selection_width => 5
-		)
-		PORT MAP
-		(
-			in_i(0) => s_reg_00,
-			in_i(1) => s_reg_01,
-			in_i(2) => s_reg_02,
-			in_i(3) => s_reg_03,
-			in_i(4) => s_reg_04,
-			in_i(5) => s_reg_05,
-			in_i(6) => s_reg_06,
-			in_i(7) => s_reg_07,
-			in_i(8) => s_reg_08,
-			in_i(9) => s_reg_09,
-			in_i(10) => s_reg_10,
-			in_i(11) => s_reg_11,
-			in_i(12) => s_reg_12,
-			in_i(13) => s_reg_13,
-			in_i(14) => s_reg_14,
-			in_i(15) => s_reg_15,
-			in_i(16) => s_reg_16,
-			in_i(17) => s_reg_17,
-			in_i(18) => s_reg_18,
-			in_i(19) => s_reg_19,
-			in_i(20) => s_reg_20,
-			in_i(21) => s_reg_21,
-			in_i(22) => s_reg_22,
-			in_i(23) => s_reg_23,
-			in_i(24) => s_reg_24,
-			in_i(25) => s_reg_25,
-			in_i(26) => s_reg_26,
-			in_i(27) => s_reg_27,
-			in_i(28) => s_reg_28,
-			in_i(29) => s_reg_29,
-			in_i(30) => s_reg_30,
-			in_i(31) => s_reg_31,
-			in_sel => s_controller_sel(c_select_mux_registerbank_b + c_select_mux_registerbank_width - 1 DOWNTO c_select_mux_registerbank_b),
-			out_o => s_register_bank_output_b
-		);
+	-- Register file
+	register_file: ENTITY WORK.register_file(behavioral)
+	PORT MAP
+	(
+		s_main_mux_output,
+		s_controller_sel(c_select_mux_registerbank_a + c_select_mux_registerbank_width - 1 DOWNTO c_select_mux_registerbank_a),
+		s_controller_sel(c_select_mux_registerbank_b + c_select_mux_registerbank_width - 1 DOWNTO c_select_mux_registerbank_b),
+		system_clock,
+		s_controller_en(c_clock_registerbank_size + c_clock_registerbank - 1 DOWNTO c_clock_registerbank),
+		-----------------------------------------------------------------------------------------------------------------------
+		s_register_bank_output_a,
+		s_register_bank_output_b	
+	);
 	
 	-- Data masking
-	s_mask_output <= s_controller_mask AND s_mdr_output;
+	data_mask: ENTITY WORK.data_mask(behavioral)
+	PORT MAP
+	(
+		s_mdr_output,
+		s_controller_mask,
+		s_mask_output
+	);
+--	s_mask_output <= s_controller_mask AND s_mdr_output;
+	
+--	-- Register bank registers
+--	r00: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(0),
+--         system_clock,
+--			s_reg_00
+--		);
+--		
+--		r01: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(1),
+--         system_clock,
+--			s_reg_01
+--		);
+--		
+--		r02: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(2),
+--         system_clock,
+--			s_reg_02
+--		);
+--		
+--		r03: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(3),
+--         system_clock,
+--			s_reg_03
+--		);
+--		
+--		r04: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(4),
+--         system_clock,
+--			s_reg_04 
+--		);
+--		
+--		r05: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(5),
+--         system_clock,
+--			s_reg_05
+--		);
+--		
+--		r06: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(6),
+--         system_clock,
+--			s_reg_06
+--		);
+--		
+--		r07: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(7),
+--         system_clock,
+--			s_reg_07
+--		);
+--		
+--		r08: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(8),
+--         system_clock,
+--			s_reg_08
+--		);
+--		
+--		r09: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(9),
+--         system_clock,
+--			s_reg_09
+--		);
+--		
+--		r10: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(10),
+--         system_clock,
+--			s_reg_10
+--		);
+--		
+--		r11: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(11),
+--         system_clock,
+--			s_reg_11
+--		);
+--		
+--		r12: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(12),
+--         system_clock,
+--			s_reg_12
+--		);
+--		
+--		r13: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(13),
+--         system_clock,
+--			s_reg_13
+--		);
+--		
+--		r14: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(14),
+--         system_clock,
+--			s_reg_14
+--		);
+--		
+--		r15: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(15),
+--         system_clock,
+--			s_reg_15
+--		);
+--		
+--		r16: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(16),
+--         system_clock,
+--			s_reg_16
+--		);
+--		
+--		r17: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(17),
+--         system_clock,
+--			s_reg_17
+--		);
+--		
+--		r18: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(18),
+--         system_clock,
+--			s_reg_18
+--		);
+--		
+--		r19: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(19),
+--         system_clock,
+--			s_reg_19
+--		);
+--		
+--		r20: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(20),
+--         system_clock,
+--			s_reg_20
+--		);
+--		
+--		r21: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(21),
+--         system_clock,
+--			s_reg_21
+--		);
+--		
+--		r22: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(22),
+--         system_clock,
+--			s_reg_22
+--		);
+--		
+--		r23: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(23),
+--         system_clock,
+--			s_reg_23
+--		);
+--		
+--		r24: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(24),
+--         system_clock,
+--			s_reg_24
+--		);
+--		
+--		r25: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(25),
+--            system_clock,
+--			s_reg_25
+--		);
+--		
+--		r26: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(26),
+--         system_clock,
+--			s_reg_26
+--		);
+--		
+--		r27: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(27),
+--         system_clock,
+--			s_reg_27
+--		);
+--		
+--		r28: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(28),
+--         system_clock,
+--			s_reg_28
+--		);
+--		
+--		r29: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(29),
+--         system_clock,
+--			s_reg_29
+--		);
+--		
+--		r30: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(30),
+--         system_clock,
+--			s_reg_30
+--		);
+--		
+--		r31: ENTITY WORK.parallel_register(behavioral)
+--		PORT MAP
+--		(
+--			s_main_mux_output,
+--			s_controller_en(31),
+--         system_clock,
+--			s_reg_31
+--		);
+--		
+--		-- Register bank data output a multiplexer driven by selection signal
+--		m1: ENTITY WORK.mux(behavioral)
+--		GENERIC MAP
+--		(
+--			g_selection_width => 5
+--		)
+--		PORT MAP
+--		(
+--			in_i(0) => s_reg_00,
+--			in_i(1) => s_reg_01,
+--			in_i(2) => s_reg_02,
+--			in_i(3) => s_reg_03,
+--			in_i(4) => s_reg_04,
+--			in_i(5) => s_reg_05,
+--			in_i(6) => s_reg_06,
+--			in_i(7) => s_reg_07,
+--			in_i(8) => s_reg_08,
+--			in_i(9) => s_reg_09,
+--			in_i(10) => s_reg_10,
+--			in_i(11) => s_reg_11,
+--			in_i(12) => s_reg_12,
+--			in_i(13) => s_reg_13,
+--			in_i(14) => s_reg_14,
+--			in_i(15) => s_reg_15,
+--			in_i(16) => s_reg_16,
+--			in_i(17) => s_reg_17,
+--			in_i(18) => s_reg_18,
+--			in_i(19) => s_reg_19,
+--			in_i(20) => s_reg_20,
+--			in_i(21) => s_reg_21,
+--			in_i(22) => s_reg_22,
+--			in_i(23) => s_reg_23,
+--			in_i(24) => s_reg_24,
+--			in_i(25) => s_reg_25,
+--			in_i(26) => s_reg_26,
+--			in_i(27) => s_reg_27,
+--			in_i(28) => s_reg_28,
+--			in_i(29) => s_reg_29,
+--			in_i(30) => s_reg_30,
+--			in_i(31) => s_reg_31,
+--			in_sel => s_controller_sel(c_select_mux_registerbank_a + c_select_mux_registerbank_width - 1 DOWNTO c_select_mux_registerbank_a),
+--			out_o => s_register_bank_output_a
+--		);
+--		
+--		-- Register bank data output b multiplexer driven by selection signal
+--		m2: ENTITY WORK.mux(behavioral)
+--		GENERIC MAP
+--		(
+--			g_selection_width => 5
+--		)
+--		PORT MAP
+--		(
+--			in_i(0) => s_reg_00,
+--			in_i(1) => s_reg_01,
+--			in_i(2) => s_reg_02,
+--			in_i(3) => s_reg_03,
+--			in_i(4) => s_reg_04,
+--			in_i(5) => s_reg_05,
+--			in_i(6) => s_reg_06,
+--			in_i(7) => s_reg_07,
+--			in_i(8) => s_reg_08,
+--			in_i(9) => s_reg_09,
+--			in_i(10) => s_reg_10,
+--			in_i(11) => s_reg_11,
+--			in_i(12) => s_reg_12,
+--			in_i(13) => s_reg_13,
+--			in_i(14) => s_reg_14,
+--			in_i(15) => s_reg_15,
+--			in_i(16) => s_reg_16,
+--			in_i(17) => s_reg_17,
+--			in_i(18) => s_reg_18,
+--			in_i(19) => s_reg_19,
+--			in_i(20) => s_reg_20,
+--			in_i(21) => s_reg_21,
+--			in_i(22) => s_reg_22,
+--			in_i(23) => s_reg_23,
+--			in_i(24) => s_reg_24,
+--			in_i(25) => s_reg_25,
+--			in_i(26) => s_reg_26,
+--			in_i(27) => s_reg_27,
+--			in_i(28) => s_reg_28,
+--			in_i(29) => s_reg_29,
+--			in_i(30) => s_reg_30,
+--			in_i(31) => s_reg_31,
+--			in_sel => s_controller_sel(c_select_mux_registerbank_b + c_select_mux_registerbank_width - 1 DOWNTO c_select_mux_registerbank_b),
+--			out_o => s_register_bank_output_b
+--		);
+
 
 END behavioral;

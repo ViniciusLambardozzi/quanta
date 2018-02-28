@@ -1,34 +1,36 @@
-----------------------------------------
--- 32 BIT ALU                         --
--- PORT MAPPING                       --
--- A: 32 bit input value              --
--- B: 32 bit input value              --
--- CIN: 1 bit input  carry            --
--- FUN: 4 bit input function selector --
---      0 - ZERO                      --
---      1 - ADD                       --
---      2 - SUBTRACT                  --
---      3 - PASS                      --
---      4 - NOT                       --
---      5 - AND                       --
---      6 - OR                        --
---      7 - XOR                       --
---      8 - XNOR                      --
---      9 - PASS B                    --
---     10 -                           --
---     11 -                           --
---     12 -                           --
---     13 -                           --
---     14 -                           --
---     15 -                           --
-----------------------------------------
--- C: 32 bit output value           --
--- STATUS: 4 bit status output        --
---         0 - ZERO                   --
---         1 - CARRY                  -- 
---         2 - SIGN                   --
---         3 - OVERFLOW               --
-----------------------------------------
+-----------------------------------------
+-- 32 BIT ALU                          --
+-----------------------------------------
+--IN-------------------------------------
+-- A   : 32 bit input value            --
+-- B   : 32 bit input value            --
+-- CIN : 1 bit input  carry            --
+-- FUN : 4 bit input function selector --
+--      0 - ZERO                       --
+--      1 - ADD                        --
+--      2 - SUBTRACT                   --
+--      3 - PASS                       --
+--      4 - NOT                        --
+--      5 - AND                        --
+--      6 - OR                         --
+--      7 - XOR                        --
+--      8 - XNOR                       --
+--      9 - PASS B                     --
+--     10 -                            --
+--     11 -                            --
+--     12 -                            --
+--     13 -                            --
+--     14 -                            --
+--     15 -                            --
+-----------------------------------------
+--OUT------------------------------------
+-- C      : 32 bit output value        --
+-- STATUS : 4 bit status output        --
+--         0 - ZERO                    --
+--         1 - CARRY                   -- 
+--         2 - SIGN                    --
+--         3 - OVERFLOW                --
+-----------------------------------------
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -41,7 +43,7 @@ ENTITY alu IS
 		in_b       : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		in_cin     : IN STD_LOGIC;
 		in_fun     : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-		---------------------------------------------------------------
+		-----------------------------------------------
 		out_c      : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		out_status : OUT STD_LOGIC_VECTOR( 3 DOWNTO 0)	
 	);
@@ -61,7 +63,7 @@ ARCHITECTURE behavioral OF alu IS
 	SIGNAL s_status : STD_LOGIC_VECTOR( 3 DOWNTO 0);
 	
 BEGIN 
-	-- Instantiate adder          
+	-- Adder module
 	a: ENTITY WORK.adder(behavioral)
 	PORT MAP
 	(
@@ -71,8 +73,8 @@ BEGIN
 		s_add,
 		s_cout
 	);
-			
-	-- Instantiate subtractor          
+	
+	-- Instantiate 2's complement subtractor with adder module
 	s: ENTITY WORK.adder(behavioral)
 	PORT MAP
    (
@@ -83,12 +85,15 @@ BEGIN
 		s_bout
 	);
 	
+	-- Wire operation result to output
 	out_c <= s_out;
+	-- Wire status signal to output
 	out_status <= s_status;
 	
-	-- Multiplexers set outputs using function code 
+	-- Async operation changes on every signal
 	PROCESS(in_a, in_b, in_cin, in_fun, s_out, s_status, s_add, s_cout, s_sub,	s_bout)
 	BEGIN
+		-- Multiplexer set outputs using function code
 		CASE in_fun is
 			-- ZERO     
 			WHEN "0000" =>
@@ -223,7 +228,6 @@ BEGIN
 				s_status(2) <= s_out(31);
 				s_status(3) <= '0';
 				
-			-- NOOP OPCODES for future expansion
 			-- PASS B 
 			WHEN "1001" =>
 				-- Set output to input b
@@ -239,6 +243,8 @@ BEGIN
 				s_status(1) <= '0';
 				s_status(2) <= s_out(31);
 				s_status(3) <= '0';
+
+			-- NOOP OPCODES for future expansion
 			WHEN OTHERS =>
 				-- Set all outputs to 0                
 				s_out <= STD_LOGIC_VECTOR(TO_UNSIGNED(0, s_out'LENGTH));

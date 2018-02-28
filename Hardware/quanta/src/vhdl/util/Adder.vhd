@@ -1,10 +1,12 @@
 ------------------------------------
 -- 32 BIT CARRY LOOK AHEAD ADDER  --
--- PORT MAPPING                   --
+------------------------------------
+--IN--------------------------------
 -- A    : 32 bit input value      --
 -- B    : 32 bit input value      --
 -- CIN  : 1 bit input carry       --
 ------------------------------------
+--OUT-------------------------------
 -- C    : 32 bit output value A+B --
 -- COUT : 1 bit output carry      --
 ------------------------------------
@@ -55,15 +57,15 @@ BEGIN
 		s_carry(1) <= s_generate(0) OR (s_propagate(0) AND in_cin);		
 		
 		FOR i IN 1 TO 30 LOOP  
-			-- Recursively calculate all intermediate carries                
+			-- Calculate all intermediate carries
 			s_carry(i + 1) <= s_generate(i) OR (s_propagate(i) AND s_carry(i));
 		END LOOP;
 		
-		-- Calculate carry out                                        --
+		-- Calculate carry out
 		out_cout <= s_generate(31) OR (s_propagate(31) AND s_carry(31));		
 	END PROCESS;
 	
-	-- Calculate final sum                                          --
+	-- Calculate final sum
 	out_c(0) <= s_sum(0) XOR in_cin;
 	out_c(31 DOWNTO 1) <= s_sum(31 DOWNTO 1) XOR s_carry(31 DOWNTO 1);	
 END behavioral;

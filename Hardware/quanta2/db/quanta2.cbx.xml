@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="quanta2">
+		<CBX_INST_ENTRY INSTANCE_NAME="|quanta2|Processor:inst|fetch:inst|instruction_ram:instruction_ram|altsyncram:memory_rtl_0" CBX_FILE_NAME="altsyncram_mt41.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|quanta2|Processor:inst|memory_access:inst3|data_ram:ram|altsyncram:memory_rtl_0" CBX_FILE_NAME="altsyncram_ogj1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

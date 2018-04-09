@@ -19,7 +19,7 @@
 #
 # Quartus II 64-Bit
 # Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
-# Date created = 09:14:32  March 02, 2018
+# Date created = 15:22:16  March 20, 2018
 #
 # -------------------------------------------------------------------------- #
 #
@@ -41,51 +41,46 @@ set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY quanta2
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:14:32  MARCH 02, 2018"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:22:16  MARCH 20, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION 14.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name VHDL_FILE src/Constants.vhd
-set_global_assignment -name VHDL_FILE src/memory/Register.vhd
-set_global_assignment -name VHDL_FILE src/util/Multiplexer.vhd
-set_global_assignment -name VHDL_FILE src/memory/RegisterFile.vhd
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name VHDL_FILE src/stage/Fetch.vhd
+set_global_assignment -name VHDL_FILE src/component/Register.vhd
+set_global_assignment -name VHDL_FILE src/lib/Constants.vhd
+set_global_assignment -name VHDL_FILE src/component/Adder.vhd
+set_global_assignment -name VHDL_FILE src/component/Multiplexer.vhd
+set_global_assignment -name VHDL_FILE src/lib/Types.vhd
+set_global_assignment -name VHDL_FILE src/component/InstructionRAM.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE src/Types.vhd
 set_global_assignment -name BDF_FILE quanta2.bdf
-set_global_assignment -name VHDL_FILE src/memory/RAM.vhd
-set_global_assignment -name VHDL_FILE src/util/Adder.vhd
-set_global_assignment -name VHDL_FILE src/component/Fetch.vhd
-set_global_assignment -name VHDL_FILE src/lib/Types.vhd
-set_global_assignment -name VHDL_FILE src/lib/Constants.vhd
-set_global_assignment -name VHDL_FILE src/io/HexDisplay.vhd
-set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_location_assignment PIN_M23 -to sys_clock
-set_location_assignment PIN_AD17 -to out_hex_0[6]
-set_location_assignment PIN_AE17 -to out_hex_0[5]
-set_location_assignment PIN_AG17 -to out_hex_0[4]
-set_location_assignment PIN_AH17 -to out_hex_0[3]
-set_location_assignment PIN_AF17 -to out_hex_0[2]
-set_location_assignment PIN_AG18 -to out_hex_0[1]
-set_location_assignment PIN_AA14 -to out_hex_0[0]
-set_global_assignment -name VHDL_FILE src/component/Decode.vhd
-set_global_assignment -name VHDL_FILE src/Processor.vhd
-set_global_assignment -name VHDL_FILE src/component/Controller.vhd
-set_global_assignment -name VHDL_FILE src/component/Execute.vhd
+set_global_assignment -name VHDL_FILE src/stage/Decode.vhd
+set_global_assignment -name VHDL_FILE src/component/RegisterFile.vhd
+set_global_assignment -name VHDL_FILE src/stage/Execute.vhd
 set_global_assignment -name VHDL_FILE src/component/ALU.vhd
 set_global_assignment -name VHDL_FILE src/component/Shifter.vhd
-set_global_assignment -name VHDL_FILE src/component/MemoryAccess.vhd
-set_global_assignment -name VHDL_FILE src/component/WriteBack.vhd
-set_global_assignment -name VHDL_FILE src/stage/Fetch.vhd
-set_global_assignment -name VHDL_FILE src/stage/Decode.vhd
-set_global_assignment -name VHDL_FILE src/stage/Execute.vhd
-set_global_assignment -name VHDL_FILE src/memory/DataRAM.vhd
 set_global_assignment -name VHDL_FILE src/stage/MemoryAccess.vhd
+set_global_assignment -name VHDL_FILE src/component/DataRAM.vhd
 set_global_assignment -name VHDL_FILE src/stage/WriteBack.vhd
+set_global_assignment -name VHDL_FILE src/component/JumpController.vhd
+set_global_assignment -name VHDL_FILE src/component/Controller.vhd
+set_global_assignment -name VHDL_FILE src/stage/FD.vhd
+set_global_assignment -name VHDL_FILE src/stage/DE.vhd
+set_global_assignment -name VHDL_FILE src/stage/EMA.vhd
+set_global_assignment -name VHDL_FILE src/stage/MAWB.vhd
+set_global_assignment -name BDF_FILE src/Processor.bdf
+set_global_assignment -name VHDL_FILE src/component/BitRegister.vhd
+set_global_assignment -name MIF_FILE quanta2.mif
+set_global_assignment -name VHDL_FILE src/component/HexDisplay.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/Waveform.vwf
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "C:/Vinicius/quanta/Hardware/quanta2/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name VHDL_FILE src/component/ForwardUnit.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

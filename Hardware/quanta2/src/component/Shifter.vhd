@@ -27,13 +27,16 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
+USE WORK.constants.ALL;
+
 ENTITY shifter IS
 	PORT
 	(
-		in_a       : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		in_fun     : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-		------------------------------------------------
-		out_c      : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		in_a : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		in_fun : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+		
+		
+		out_c : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		out_status : OUT    STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 END shifter;

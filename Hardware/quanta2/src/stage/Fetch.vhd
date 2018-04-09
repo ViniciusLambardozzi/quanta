@@ -1,103 +1,89 @@
--------------------------------------
--- INSTRUCTION FETCH               --
--------------------------------------
---IN---------------------------------
--------------------------------------
--- CLK    : clock                  --
----------------------------------------
---DATA---------------------------------
--- C DATA      : jump address        --
----------------------------------------
---CONTROL------------------------------
--- ZERO        : alu zero            --
--- JUMP        : jump control        --
----------------------------------------
----------------------------------------
---OUT----------------------------------
----------------------------------------
---DATA---------------------------------
--- INSTRUCTION : fetched instruction --
----------------------------------------
-
 LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
 
 USE WORK.constants.ALL;
-USE WORK.types.ALL;
 
 ENTITY fetch IS
 	PORT
 	(
-		clk         : IN  STD_LOGIC;
-		------------------------------------------------
-		c_data      : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		------------------------------------------------
-		jump        : IN  STD_LOGIC;
-		------------------------------------------------
-		instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		in_clk : IN  STD_LOGIC;
+		in_jump_signal : IN STD_LOGIC;
+		
+		in_jump_address : IN STD_LOGIC_VECTOR(31 DOWNTO 0);	
+		
+		
+		out_instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		
+		out_address : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
  	);
 END fetch;
 
 ARCHITECTURE behavioral OF fetch IS
-	SIGNAL pc_value          : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	SIGNAL incrementer_value : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL s_pc_value : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL s_incrementer_value : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	
-	SIGNAL jump_vector       : STD_LOGIC_VECTOR( 0 DOWNTO 0);
-	SIGNAL mux_value         : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL s_jump_vector : STD_LOGIC_VECTOR( 0 DOWNTO 0);
+	SIGNAL s_mux_value : STD_LOGIC_VECTOR(31 DOWNTO 0);
 BEGIN
 
-	jump_vector(0) <= jump;
+	s_jump_vector(0) <= in_jump_signal;
+	out_address <= s_pc_value;
 
 	pc: ENTITY WORK.parallel_register(behavioral)
 	PORT MAP 
 	(
-		clk => clk,
-		-----------------
-		d   => mux_value,
-		-----------------
-		q   => pc_value
+		in_clk => in_clk,
+		
+		in_d   => s_mux_value,
+		
+		
+		out_q   => s_pc_value
 	);
 	
 	adder: ENTITY WORK.adder(behavioral)
 	PORT MAP
 	(
-		a     => pc_value,
-		b     => STD_LOGIC_VECTOR(TO_UNSIGNED(1, 32)),
-		cin   => '0',
-		----------------------------------------------
-		c    => incrementer_value,
-		cout => OPEN
+		in_a => s_pc_value,
+		in_b => STD_LOGIC_VECTOR(TO_UNSIGNED(1, 32)),
+		in_cin => '0',
+		
+		
+		out_c => s_incrementer_value,
+		out_cout => OPEN
 	);
 	
 	mux: ENTITY WORK.mux(behavioral)
 	GENERIC MAP
 	(
-		selection_width => 1
+		g_selection_width => 1
 	)
 	PORT MAP
 	(
-		i(0) => incrementer_value,
-		i(1) => c_data,
-		--------------------------
-		sel  => jump_vector,
-		--------------------------
-		o    => mux_value
+		in_i(0) => s_incrementer_value,
+		in_i(1) => in_jump_address,
+		
+		in_sel => s_jump_vector,
+		
+		
+		out_o => s_mux_value
 	);
 
-	ram: ENTITY WORK.ram(behavioral)
+	instruction_ram: ENTITY WORK.instruction_ram(behavioral)
 	GENERIC MAP
 	(
-		addr_width => PROGRAM_RAM_ADDR_WIDTH
+		g_addr_width => INSTRUCTION_RAM_ADDR_WIDTH
 	)
 	PORT MAP
 	(
-		clk      => clk,
-		----------------------------------------------------------
+		in_clk => in_clk,		
 
-      addr     => pc_value(PROGRAM_RAM_ADDR_WIDTH - 1 DOWNTO 0),  
-      ----------------------------------------------------------
-      data_out => instruction
+      in_addr => s_pc_value(INSTRUCTION_RAM_ADDR_WIDTH - 1 DOWNTO 0), 
+		
+		
+      out_data => out_instruction
 	);
 	
+
 END behavioral;

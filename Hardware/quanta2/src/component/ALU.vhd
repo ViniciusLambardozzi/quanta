@@ -39,27 +39,27 @@ USE ieee.numeric_std.ALL;
 ENTITY alu IS
 	PORT
 	(
-		in_a       : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		in_b       : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		in_cin     : IN  STD_LOGIC;
-		in_fun     : IN  STD_LOGIC_VECTOR( 3 DOWNTO 0);
+		in_a : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		in_b : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		in_cin : IN  STD_LOGIC;
+		in_fun : IN  STD_LOGIC_VECTOR( 3 DOWNTO 0);
 		-----------------------------------------------
-		out_c      : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		out_c : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 		out_status : OUT STD_LOGIC_VECTOR( 3 DOWNTO 0)	
 	);
 END alu;
 
 ARCHITECTURE behavioral OF alu IS
 	-- Adder result signals                     
-	SIGNAL s_add  : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL s_add : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL s_cout : STD_LOGIC;
 	
 	-- Subtractor result signals                
-	SIGNAL s_sub  : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL s_sub : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL s_bout : STD_LOGIC;
 	
 	-- Output signals
-	SIGNAL s_out    : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	SIGNAL s_out : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	SIGNAL s_status : STD_LOGIC_VECTOR( 3 DOWNTO 0);
 	
 BEGIN 

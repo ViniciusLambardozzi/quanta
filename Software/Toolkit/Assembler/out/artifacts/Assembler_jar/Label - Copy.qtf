@@ -1,0 +1,137 @@
+; const definitions
+li $0, 0  ; const 0
+li $1, 1  ; const 1
+
+; convention register definition
+li $27, 0 ; arg0
+li $28, 0 ; arg1
+li $29, 0 ; return
+li $30, 0 ; return address
+
+; set the stack pointer to a RAM address
+li $5, 512 ; stack pointer
+
+; set IO address registers
+li $2, 1  ; hex displays
+li $3, 3  ; buttons
+li $4, 3  ; switches
+
+; address of the hex displays has the most significant bit set
+li $27, 31
+.shiftAddress:
+    lsl $2
+    sub $27, $1
+    jne $27, $0, shiftAddress
+
+; address of buttons and switches has the 2 most significant bits set
+li $27, 30
+.shiftInputAddress:
+    lsl $3
+    lsl $4
+    sub $27, $1
+    jne $27, $0, shiftInputAddress
+
+; address of switches also has the least significant bit set
+or $4, $1
+
+; main routine
+.main:
+    ; wait for user input
+    call getInput
+
+    ; get the input from return register, move it to arg0 and call factorial
+    mov $27, $29
+    call factorial
+
+    ; get the result of the factorial, move it to arg0 and print it
+    mov $27, $29
+    call printHex
+
+    j end
+
+; wait for a button press, then return the switches
+.getInput:
+    load $6, $3
+    li $7, 14
+
+    load $27, $4
+
+    ; store return address in stack before subroutine call
+    store $30, $5
+    call printHex
+    load $30, $5
+
+    jne $6, $7, getInput
+
+    mov $29, $27
+    j $30
+
+; output arg0 to hex displays
+.printHex:
+    store $27, $2
+    j $30
+
+; recursive factorial of arg0 (uses black magic)
+.factorial:
+    ; base case, arg0 is 0, return 1
+    jeq $27, $0, baseCase
+
+    ; debug block
+    ; prints E to the hex displays
+    ; li $27, 14
+    ; store $27, $2
+    ; j end
+
+    ; store ra and current value on stack
+    store $30, $5
+    add $5, $1
+    store $27, $5
+    add $5, $1
+
+    ; subtract 1 from the parameter
+    sub $27, $1
+
+    ; recursive call
+    call factorial
+
+    ; rewind recursion
+    ; restore current value and ra
+    sub $5, $1
+    load $27, $5
+    sub $5, $1
+    load $30, $5
+
+    ; calculate n * (n-1)! and return
+    mov $28, $29
+
+    ; store return address
+    store $30, $5
+    call multiply
+    load $30, $5
+
+    ; return
+    j $30
+
+    .baseCase:
+        mov $29, $1
+        j $30
+
+; multiply arg0 by arg1
+.multiply:
+    ; save a copy of arg1 as iterator
+    mov $26, $28
+    ; initialize return value as 0
+    mov $29, $0
+
+    .multiplyLoop:
+        ; return if multiplying by 0
+        jeq $26, $0, $30
+        ; consecutive sum
+        add $29, $27
+        sub $26, $1
+        j multiplyLoop
+
+
+; infinite loop to stall execution
+.end:
+    j end

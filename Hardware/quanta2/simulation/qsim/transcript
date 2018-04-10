@@ -26,7 +26,7 @@
 # Loading work.quanta2_vlg_sample_tst
 # Loading work.quanta2_vlg_check_tst
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 18996 statements exceeds ModelSim Altera Starter recommended capacity.
+# ** Warning: Design size of 18983 statements exceeds ModelSim Altera Starter recommended capacity.
 # Expect performance to be adversely affected.
 # Simulation passed !
 # ** Note: $finish    : Waveform.vwf.vt(4362)

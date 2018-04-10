@@ -1,5 +1,5 @@
 EDA Netlist Writer report for quanta2
-Mon Apr 09 13:52:28 2018
+Tue Apr 10 07:49:10 2018
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Apr 09 13:52:28 2018 ;
+; EDA Netlist Writer Status ; Successful - Tue Apr 10 07:49:10 2018 ;
 ; Revision Name             ; quanta2                               ;
 ; Top-level Entity Name     ; quanta2                               ;
 ; Family                    ; Cyclone IV E                          ;
@@ -95,13 +95,13 @@ Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: devices manufactured by Altera and sold by Altera or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Mon Apr 09 13:52:24 2018
+    Info: Processing started: Tue Apr 10 07:49:06 2018
 Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=C:/Vinicius/quanta/Hardware/quanta2/simulation/qsim/ quanta2 -c quanta2
 Info (119006): Selected device EP4CE115F29C7 for design "quanta2"
 Info (204019): Generated file quanta2.vo in folder "C:/Vinicius/quanta/Hardware/quanta2/simulation/qsim//" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 533 megabytes
-    Info: Processing ended: Mon Apr 09 13:52:28 2018
+    Info: Processing ended: Tue Apr 10 07:49:10 2018
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 

@@ -42,7 +42,7 @@ BEGIN
 		current_register: ENTITY WORK.parallel_register(behavioral)
 		PORT MAP
 		(
-			in_clk =>  (in_clk AND in_write_signal AND s_decoded_address(i)),
+			in_clk => NOT(in_clk) AND in_write_signal AND s_decoded_address(i),
 
 			in_d => in_write_data,
 			

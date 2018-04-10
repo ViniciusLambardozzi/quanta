@@ -14,8 +14,7 @@ ENTITY fetch IS
 		in_jump_address : IN STD_LOGIC_VECTOR(31 DOWNTO 0);	
 		
 		
-		out_instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-		
+		out_instruction : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);		
 		out_address : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
  	);
 END fetch;

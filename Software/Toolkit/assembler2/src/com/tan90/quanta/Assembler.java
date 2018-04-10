@@ -13,7 +13,7 @@ public class Assembler
 {
     private CircuitConstants ConstantsFile;
 
-    private boolean DisablePipelineOverlap = true;
+    private boolean DisablePipelineOverlap = false;
 
     public Assembler(CircuitConstants ConstantsFile)
     {
